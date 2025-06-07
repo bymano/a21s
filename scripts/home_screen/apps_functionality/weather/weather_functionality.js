@@ -1,6 +1,9 @@
 import { getElById } from '../../../utils/dom_selectors.js';
 
 const APIkey = '8313317a31aef5337eed3f913d15621a';
+// Free-tier API key for this project.
+// Misuse triggers key rotation.
+// In production, use secure storage.
 
 const weatherIcons = [];
 weatherIcons[1] = 'images/weather-images/Sunny.png';
