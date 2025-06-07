@@ -8,7 +8,7 @@ const APIkey = '8313317a31aef5337eed3f913d15621a';
 const weatherIcons = [];
 weatherIcons[1] = 'images/weather-images/Sunny.png';
 weatherIcons[2] = 'images/weather-images/partly-cloudy.png';
-weatherIcons[3], weatherIcons[4] = 'images/weather-images/cloudy.png';
+weatherIcons[3] = weatherIcons[4] = 'images/weather-images/cloudy.png';
 weatherIcons[10] = 'images/weather-images/rainy.png';
 weatherIcons[11] = 'images/weather-images/thunderstorm.png';
 weatherIcons[13] = 'images/weather-images/snowy.png';
