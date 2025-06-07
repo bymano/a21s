@@ -13,42 +13,41 @@ let initialY;
 let finalX;
 let finalY;
 
-// 300 is just preference. Not strictly.
+// 150 is just preference. Not strictly.
 
 const unlockPoint = 150;
 
 function changeLockscreenOpacity(e) {
-
   // Get absolute difference between points
-
+  
   const moveX = Math.abs(initialX - e.clientX);
   const moveY = Math.abs(initialY - e.clientY);
-
-  // Compare the initial mouse position to the current one
-  // 0.0033 because the unlockPoint is 300 (1 / 300 is 0.0033)
+  
+  // Compare the initial pointer position to the current one
+  // 0.0066 because the unlockPoint is 150 (1 / 150 = 0.0066)
   // Opacity fades to 0 as swipe distance approaches 300px
 
-  phoneLockscreenContent.style.opacity = moveX > moveY ? (1 - moveX * 0.0033) : (1 - moveY * 0.0033);
+  phoneLockscreenContent.style.opacity = moveX > moveY ? (1 - moveX * 0.0066) : (1 - moveY * 0.0066);
 }
 
 export function startSwipeTracking(e) {
   e.preventDefault();
-  // Save initial mouse position on press
+  // Save initial pointer position on press
   initialX = e.clientX;
   initialY = e.clientY;
 
-  // Compare on each mouse move
-  phoneLockscreenContent.addEventListener('mousemove', changeLockscreenOpacity)
+  // Compare on each pointer move
+  phoneLockscreenContent.addEventListener('pointermove', changeLockscreenOpacity)
 }
 
-// Reset opacity and stop tracking if mouse leaves phone screen
+// Reset opacity and stop tracking if pointer leaves phone screen
 
 export function stopTrackingOnLeave() {
   phoneLockscreenContent.style.opacity = 1;
-  phoneLockscreenContent.removeEventListener('mousemove', changeLockscreenOpacity);
+  phoneLockscreenContent.removeEventListener('pointermove', changeLockscreenOpacity);
 }
 
-// On mouse release, unlock if swipe distance >= 300px
+// On pointer release, unlock if swipe distance >= 300px
 
 export function endSwipeTracking(e) {
   phoneLockscreenContent.style.opacity = 1;
@@ -61,5 +60,5 @@ export function endSwipeTracking(e) {
   }
 
   // Stop tracking after unlock
-  phoneLockscreenContent.removeEventListener('mousemove', changeLockscreenOpacity);
+  phoneLockscreenContent.removeEventListener('pointermove ', changeLockscreenOpacity);
 }
