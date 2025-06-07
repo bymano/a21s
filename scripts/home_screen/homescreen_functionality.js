@@ -1,8 +1,9 @@
 import { runTime } from '../utils/time_date.js';
-import { lockAnimation, unlockAnimation } from '../utils/lock_unlock_animation.js';
+import { unlockAnimation } from '../utils/lock_unlock_animation.js';
 import { apps } from './data/apps.js';
 import { constants } from '../utils/dom_constants.js';
 import { setDisplay } from '../utils/dom_selectors.js';
+import { appLock } from '../utils/app_unlock.js';
 
 const { phoneHomescreenContent, secondaryHomescreenContent, homescreenTimeEl, homescreenAppGrid, wallpaperEl } = constants;  
 
@@ -11,14 +12,10 @@ export function activateHomescreenFunctionality() {
 }
 
 export function homescreenUnlock() {
-  constants.currentScreen = 'homescreen';
+  constants.currentScreen.main = phoneHomescreenContent;
   setDisplay(phoneHomescreenContent, 'initial');
   wallpaperEl.src = 'images/wallpaper-3.jpeg';
   unlockAnimation(homescreenAppGrid);
-}
-
-export function homescreenLock() {
-  setDisplay(phoneHomescreenContent, 'none');
 }
 
 export function loadHomescreenApps() {
@@ -34,7 +31,7 @@ export function loadHomescreenApps() {
       }
       unlockAnimation(secondaryHomescreenContent)
       setTimeout(() => {
-        homescreenLock();
+        appLock(phoneHomescreenContent);
         app.openFunc();
       }, 25)
     })

@@ -6,7 +6,6 @@ const cameraEl = getElById('webcam');
 const unlockBtn = getElById('phone-unlock-key');
 const phonePointer = getElById('pointer');
 const wallpaperEl = getElById('wallpaper');
-let currentScreen = 'lockscreen';
 
 // Lock screen Components
 
@@ -30,6 +29,12 @@ const phoneHomescreenContent = getElById('home-screen');
 const secondaryHomescreenContent = getElById('secondary-home-screen');
 const homescreenTimeEl = getElById('homescreen-time');
 const homescreenAppGrid = getElByClass('app-grid');
+
+let currentScreen = {
+  main: phoneLockscreenContent,
+  app: false
+}
+
 
 export const constants = {
   phoneEl,

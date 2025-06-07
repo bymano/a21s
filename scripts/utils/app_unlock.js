@@ -5,3 +5,7 @@ export function appUnlock(mainScreen, secondaryScreen) {
   setDisplay(mainScreen, 'initial');
   unlockAnimation(secondaryScreen);
 }
+
+export function appLock(mainScreen) {
+  setDisplay(mainScreen, 'none');
+}

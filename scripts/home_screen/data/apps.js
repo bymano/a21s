@@ -1,5 +1,6 @@
 import { getElById } from '../../utils/dom_selectors.js';
 import { appUnlock } from '../../utils/app_unlock.js';
+import { constants } from '../../utils/dom_constants.js';
 
 export const apps = [
 
@@ -47,6 +48,7 @@ apps.forEach(app => {
   const secondaryScreen = getElById(`secondary-${app.name.toLowerCase()}-screen`);
   if (!mainScreen || !secondaryScreen) return;
     app.openFunc = () => {
-      appUnlock(mainScreen, secondaryScreen)
+      appUnlock(mainScreen, secondaryScreen);
+      constants.currentScreen.app = mainScreen;
     }
 })

@@ -44,7 +44,7 @@ export function activatePasswordFunctionality() {
 // VISUALS
 
 export function passwordScreenUnlock() {
-  constants.currentScreen = 'passwordscreen';
+  constants.currentScreen.main = phonePasswordScreenContent;
   setDisplay(phonePasswordScreenContent, 'initial')
   unlockAnimation(secondaryPasswordScreenContent);
 }
