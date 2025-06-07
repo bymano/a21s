@@ -9,5 +9,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 50px rgba(255, 255, 255, .1);
+  box-shadow: 0 0 50px rgba(255, 255, 255, .3);
 }
