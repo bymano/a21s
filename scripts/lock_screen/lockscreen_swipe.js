@@ -15,7 +15,7 @@ let finalY;
 
 // 300 is just preference. Not strictly.
 
-const unlockPoint = 300;
+const unlockPoint = 150;
 
 function changeLockscreenOpacity(e) {
 
