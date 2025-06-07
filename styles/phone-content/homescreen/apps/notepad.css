@@ -1,0 +1,268 @@
+#secondary-notepad-screen {
+  background-color: black;
+  color: rgb(225, 225, 225);
+  padding: 5rem 2rem;
+}
+
+#secondary-notepad-screen .notes-search-container {
+  display: flex;
+  align-items: center;
+  background-color: rgb(25, 25, 25);
+  border-radius: 12px;
+  padding: .35rem;
+  margin: 0 0 3rem 0;
+}
+#secondary-notepad-screen h1 {
+  margin: 1rem 0;
+  font-size: 1.25rem;
+}
+#secondary-notepad-screen .notes-search-container input {
+  width: 100%;
+  font-size: 1rem;
+  color: rgb(225, 225, 225);
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+#secondary-notepad-screen .notes-search-container input::placeholder {
+  color: rgba(255, 255, 255, .5);
+}
+#secondary-notepad-screen .notes-search-container .search-icon {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, .5);
+  padding: .35rem;
+}
+
+#secondary-notepad-screen .notes-container {
+  transition: .3s;
+}
+#secondary-notepad-screen .notes-container-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .65rem;
+}
+#secondary-notepad-screen .notes-container .note {
+  background-color: rgb(30, 30, 30);
+  border-radius: 15px;
+  outline: 1px solid rgba(255, 255, 255, .2);
+  font-weight: 500;
+  padding: 1rem;
+  margin: 0 0 1rem 0;
+  transition: .3s;
+}
+#secondary-notepad-screen .notes-container-grid .note {
+  margin: 0;
+}
+#secondary-notepad-screen .notes-container .note:hover {
+  background-color: rgb(40, 40, 40);
+  transform: scale(1.025);
+}
+#secondary-notepad-screen .notes-container .note p {
+  margin: 0;
+}
+#secondary-notepad-screen .notes-container .note .note-title {
+  margin-bottom: 10px;
+  text-shadow: 0 0 2px;
+}
+#secondary-notepad-screen .notes-container .note-info-container {
+  display: flex;
+  align-items: center;
+}
+#secondary-notepad-screen .notes-container .note-info-container .note-info {
+  font-size: .85rem;
+  color: rgba(255, 255, 255, .5);
+  margin-right: .5rem;
+}
+
+
+#secondary-notepad-screen .add-note {
+  position: absolute;
+  bottom: 3.5rem;
+  right: 2rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  font-size: 2rem;
+  color: rgb(50, 50, 175);
+  box-shadow: 0 0 25px rgba(50, 50, 175, .75);
+  background-color: rgb(40, 40, 40);
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .25s;
+}
+#secondary-notepad-screen .add-note:hover {
+  transform: scale(1.025);
+  background-color: rgb(50, 50, 175);
+  color: rgb(40, 40, 40);
+}
+
+#secondary-notepad-screen .note-create-edit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(35, 35, 35);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  filter: brightness(75%);
+  padding: 3.5rem 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s;
+  z-index: 1;
+}
+
+#secondary-notepad-screen .note-create-edit-active {
+  transform: scaleX(1);
+}
+
+#secondary-notepad-screen .note-create-edit header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  margin-bottom: 1.5rem;
+}
+#secondary-notepad-screen .note-create-edit header button,
+#secondary-notepad-screen .list-grid-container button {
+  height: 2rem;
+  width: 2rem;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 .25rem;
+  transition: .25s;
+}
+#secondary-notepad-screen .note-create-edit header button:hover {
+  background-color: rgb(15, 15, 15);
+}
+#secondary-notepad-screen .list-grid-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+#secondary-notepad-screen .list-grid-container button {
+  font-size: 2rem;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+#secondary-notepad-screen .list-grid-container button:hover {
+  background-color: rgba(35, 35, 35);
+}
+
+#secondary-notepad-screen .note-create-edit header .note-create-edit-header-left #note-create-edit-back {
+  justify-content: end;
+  margin: 0;
+}
+#secondary-notepad-screen .note-create-edit header .note-create-edit-header-left #note-create-edit-back:hover {
+  background-color: initial;
+}
+#secondary-notepad-screen .note-create-edit header div {
+  display: flex;
+  align-items: center;
+}
+#secondary-notepad-screen .note-create-edit header i {
+  font-size: 1.75rem;
+}
+#secondary-notepad-screen .note-create-edit header .note-create-edit-header-left span {
+  font-size: 1.1rem;
+}
+
+#secondary-notepad-screen .note-create-edit main {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem;
+}
+#secondary-notepad-screen .note-create-edit main textarea {
+  resize: vertical;
+  max-height: 650px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  caret-color: blue;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+#secondary-notepad-screen .note-create-edit main #note-create-input-title,
+#secondary-notepad-screen .note-create-edit main #note-edit-input-title {
+  font-size: 1.5rem;
+}
+#secondary-notepad-screen .note-create-edit main #note-create-input-text,
+#secondary-notepad-screen .note-create-edit main #note-edit-input-text {
+  font-size: 1.1rem;
+}
+#secondary-notepad-screen .note-create-edit main textarea::placeholder {
+  color: rgb(125, 125, 125);
+}
+
+#secondary-notepad-screen .note-select-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(45, 45, 45);
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform .3s;
+  transform: translateY(100%);
+  transform-origin: bottom;
+  z-index: 2;
+}
+#secondary-notepad-screen .note-select-background-active {
+  transform: none;
+}
+#secondary-notepad-screen .note-select-background .background-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 .5rem;
+}
+#secondary-notepad-screen .note-select-background .background-container .background-option {
+  height: 65%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  margin: 0 .25rem;
+  transition: .25s;
+  background-position: center;
+  background-size: cover;
+  outline: 3px solid rgba(255, 255, 255, .5);
+}
+#secondary-notepad-screen .note-select-background .background-container .background-option:focus {
+  outline: 3px solid rgb(125, 125, 255);
+}
+#secondary-notepad-screen .note-select-background .background-container .background-option:hover {
+  opacity: .75;
+}
+#secondary-notepad-screen .note-select-background .background-container #background-1 {
+  background-image: url('../../../../images/notepad-images/wallpaper-1.jpeg');
+}
+#secondary-notepad-screen .note-select-background .background-container #background-2 {
+  background-image: url('../../../../images/notepad-images/wallpaper-2.jpeg');
+}
+#secondary-notepad-screen .note-select-background .background-container #background-3 {
+  background-image: url('../../../../images/notepad-images/wallpaper-3.jpeg');
+}
+#secondary-notepad-screen .note-select-background .background-container #background-4 {
+  background-image: url('../../../../images/notepad-images/wallpaper-4.jpeg');
+}
+#secondary-notepad-screen .note-select-background .background-container #background-5 {
+  background-image: url('../../../../images/notepad-images/wallpaper-5.jpeg');
+}

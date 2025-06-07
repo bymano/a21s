@@ -1,0 +1,12 @@
+.phone-pointer {
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .45);
+  border: 1px solid rgba(255, 255, 255, .25);
+  z-index: 15;
+  cursor: none;
+  pointer-events: none;
+  display: none;
+}

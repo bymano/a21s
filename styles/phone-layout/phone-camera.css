@@ -1,0 +1,12 @@
+main .phone-camera {
+  position: absolute;
+  box-sizing: border-box;
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, .55);
+  border: .35rem solid black;
+  top: 1rem;
+  left: 1.75rem;
+  z-index: 10;
+}

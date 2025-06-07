@@ -1,0 +1,52 @@
+main .phone-content footer .phone-camera-app {
+  height: 2rem;
+  width: 2rem;
+  padding: 0 1rem;
+  overflow: hidden;
+  transition: .25s;
+}
+main .phone-content footer .phone-camera-app:hover {
+  transform: scale(1.2);
+}
+main .phone-content footer .phone-camera-app img {
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center;
+}
+
+main #flashlight {
+  position: absolute;
+  font-size: 1.5rem;
+  padding: .32rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  top: 1rem;
+  right: 1.75rem;
+  z-index: 10;
+  display: none;
+  transition: .4s;
+}
+
+main .bx-sun {
+  color: white;
+  background-color: black;
+}
+main .bx-sun:hover {
+  color: black;
+  background-color: white;
+}
+
+main .bxs-sun {
+  color: black;
+  background-color: white;
+}
+main .bxs-sun:hover {
+  color: white;
+  background-color: black;
+}
+
+.flashlight-active {
+  background-color: rgb(200, 200, 200);
+}

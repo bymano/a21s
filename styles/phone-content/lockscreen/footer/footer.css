@@ -1,0 +1,9 @@
+main .phone-content footer {
+  position: absolute;
+  width: 100%;
+  bottom: 2.25rem;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

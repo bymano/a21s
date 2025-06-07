@@ -1,0 +1,45 @@
+@media screen and (max-width: 750px) {
+  #phone {
+    transform: scale(.65);
+  }
+  #pointer {
+    display: none !important;
+  }
+}
+
+main .phone-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  color: white;
+  border-radius: 50px;
+  padding: 1.5rem 1.5rem 0 2rem;
+  overflow: hidden;
+  transition: .2s;
+  touch-action: none;
+}
+main .phone-content .secondary-phone-content {
+  transition: .2s;
+  touch-action: none;
+}
+
+main .phone-content-app {
+  padding: 0;
+}
+main .phone-content-app .secondary-phone-content-app {
+  height: 100%;
+  border-radius: 50px;
+}
+
+
+main .phone-content .t-s-075 {
+  transform: scale(.75);
+}
+main .phone-content .t-s-125 {
+  transform: scale(1.25);
+}
+
+
+main .phone-content .o-n {
+  opacity: 0;
+}

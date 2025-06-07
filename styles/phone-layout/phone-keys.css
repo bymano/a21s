@@ -1,0 +1,40 @@
+main .phone-keys .key {
+  position: absolute;
+  border: none;
+  outline: none;
+  padding: 0;
+  height: 3.25rem;
+  width: .35rem;
+  background-color: black;
+  border-radius: .5rem;
+  right: -.475rem;
+  transition: background-color .25s;
+  transform-origin: left;
+}
+
+main .phone-keys .key:hover,
+main .phone-keys .key:focus {
+  background-color: rgba(133, 176, 190);
+}
+
+main .phone-keys .key:active {
+  transform: scaleX(.7);
+}
+
+main .phone-keys #volume-up-key {
+  top: 17%;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+main .phone-keys #volume-down-key {
+  top: 17%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  transform: translateY(100%);
+}
+main .phone-keys #volume-down-key:active {
+  transform: translateY(100%) scaleX(.7);
+}
+main .phone-keys #phone-unlock-key {
+  top: 37%;
+}

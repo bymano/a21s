@@ -1,0 +1,204 @@
+#secondary-weather-screen {
+  display: flex;
+  background-color: rgb(240, 240, 255);
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 2.5rem 0;
+} 
+
+#secondary-weather-screen .current-forecast,
+#secondary-weather-screen .upcoming-forecast {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+#secondary-weather-screen .current-forecast {
+  height: 55%;
+}
+#secondary-weather-screen .upcoming-forecast {
+  height: 45%;
+  background-color: rgb(205, 205, 240);
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#secondary-weather-screen .input-container {
+  position: relative;
+  text-align: center; 
+  z-index: 2;
+}
+#secondary-weather-screen .input-container input {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: inherit;
+  background-color: transparent;
+  color: black;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  padding: .5rem 1.4rem;
+  transition: .15s;
+}
+#secondary-weather-screen .input-container input:hover,
+#secondary-weather-screen .input-container input:focus {
+  background-color: rgba(255, 255, 255, .5);
+}
+#secondary-weather-screen .input-container input::selection {
+  background-color: black;
+  color: white;
+}
+
+#secondary-weather-screen .weather-display {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+#secondary-weather-screen .weather-display .weather-info-main,
+#secondary-weather-screen .upcoming-forecast .first-upcoming-forecast-card {
+  text-align: center;
+  background-image: url('../../../../images/weather-images/cloud-wallpaper.jpg');
+  background-position: center;
+  background-size: cover;
+  border-radius: 16%;
+}
+#secondary-weather-screen .weather-display .weather-info-main {
+  box-shadow: 0 0 25px rgba(97, 64, 239, .8);
+}
+#secondary-weather-screen .weather-display img {
+  width: 150px;
+}
+#secondary-weather-screen .weather-display .weather-info-main .content {
+  backdrop-filter: blur(15px);
+  padding: 2rem 4rem 0 4rem;
+  border-radius: 16%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#secondary-weather-screen .weather-display .weather-info-secondary .info {
+  transition: .25s;
+}
+#secondary-weather-screen .weather-display .weather-info-secondary .info:hover {
+  transform: scale(1.25);
+}
+#secondary-weather-screen .weather-display .weather-info-main .content .city {
+  position: absolute;
+  top: -10%;
+  font-weight: 500;
+  background-color: white;
+  color: black;
+  border-radius: 30px;
+  padding: .25rem 2.5rem;
+}
+#secondary-weather-screen .weather-display .temp {
+  font-size: 5rem;
+  margin: 0 auto;
+}
+#secondary-weather-screen .weather-display .description {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin: -15px 0 15px 0;
+}
+
+#secondary-weather-screen .weather-display .weather-info-secondary {
+  position: absolute;
+  bottom: -10%;
+  width: 75%;
+  background-color: white;
+  color: rgb(54, 17, 210);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, .25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: .3s;
+}
+#secondary-weather-screen .weather-display .weather-info-secondary div p span {
+  display: block;
+  transition: .3s;
+  margin-right: .15rem;
+}
+
+#secondary-weather-screen .weather-display .weather-info-secondary div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#secondary-weather-screen .weather-display .weather-info-secondary div p {
+  margin: 3px;
+  font-size: .9rem;
+  font-weight: 700;
+  transition: .3s;
+  display: flex;
+  align-items: center;
+}
+#secondary-weather-screen .weather-display .weather-info-secondary div label {
+  font-size: .7rem;
+  color: rgb(195, 195, 195);
+}
+#secondary-weather-screen .weather-display .weather-info-secondary div img {
+  width: 20px;
+  margin-bottom: 5px;
+  filter: brightness(0) saturate(100%) invert(17%) sepia(100%) saturate(7500%) hue-rotate(242deg) brightness(1.1);
+}
+
+.flip {
+  transform: translateY(-8px);
+} 
+.turn {
+  transform: scaleX(-1) scaleX(-1);
+  transition: .5s !important;
+}
+
+#secondary-weather-screen .upcoming-forecast .content {
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 25px;
+  padding: 1rem;
+  margin: 0 .5rem;
+  transition: .3s, transform 0s;
+  box-shadow: 0 0 15px rgba(255, 255, 255, .5)
+}
+#secondary-weather-screen .upcoming-forecast .content:hover {
+  background-color: black;
+  color: white;
+}
+#secondary-weather-screen .upcoming-forecast .first-upcoming-forecast-card {
+  padding: 0;
+}
+#secondary-weather-screen .upcoming-forecast .first-upcoming-forecast-card div {
+  backdrop-filter: blur(15px);
+  padding: 1rem;
+  border-radius: 25px;
+  color: white;
+}
+#secondary-weather-screen .upcoming-forecast .first-upcoming-forecast-card div .upcoming-day {
+  color: white;
+}
+#secondary-weather-screen .upcoming-forecast .content .upcoming-day {
+  font-size: .85rem;
+  margin: 0 0 1rem 0;
+  font-weight: 700;
+  color: rgb(17, 00, 169);
+}
+#secondary-weather-screen .upcoming-forecast .content img {
+  width: 75px;
+}
+
+#secondary-weather-screen .upcoming-forecast .content .temp {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}

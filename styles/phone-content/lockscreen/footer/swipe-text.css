@@ -1,0 +1,10 @@
+main .phone-content footer .swipe-text {
+  margin: -100px 0 0 50px;
+  position: relative;
+}
+main .phone-content footer .swipe-text i {
+  position: absolute;
+  font-size: 1.25rem;
+  left: 53px;
+  top: -30px;
+}

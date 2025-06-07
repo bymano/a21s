@@ -1,0 +1,13 @@
+#phone {
+  position: relative;
+  box-sizing: border-box; 
+  height: 918px;
+  width: 422.4px;
+  border-radius: 50px;
+  background-color: black;
+  border: 5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 50px rgba(255, 255, 255, .1);
+}

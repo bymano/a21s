@@ -1,0 +1,17 @@
+main .phone-content .phone-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1.5rem;
+}
+main .phone-content .phone-information .phone-information-icons {
+  display: flex;
+  align-items: center;
+}
+main .phone-content .phone-information .phone-information-icons i,
+main .phone-content .phone-information .phone-information-icons span {
+  margin: 0 .15rem;
+}
+main .phone-content .phone-information .phone-information-icons .battery-icon {
+  transform: rotate(-90deg);
+}

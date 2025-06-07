@@ -1,0 +1,30 @@
+* {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  user-select: none;
+  cursor: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(18, 18, 18);
+  cursor: default;
+}
+
+
+.d-n {
+  display: none !important;
+}
+.d-i {
+  display: initial !important;
+}
+.d-nn {
+  display: none !important;
+}
+.d-ii {
+  display: initial !important;
+}

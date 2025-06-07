@@ -1,0 +1,73 @@
+main #calculator-screen .calculator-buttons {
+  background-color: rgb(42, 38, 42);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+}
+
+main #calculator-screen .calculator-buttons div {
+  margin: 1rem;
+}
+main #calculator-screen .calculator-buttons button {
+  font-size: 2.1rem;
+  height: 4rem;
+  width: 4rem;
+  margin: 1rem .25rem;
+  color: rgb(61, 61, 255);
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .15s;
+}
+main #calculator-screen .calculator-buttons button:hover,
+main #calculator-screen .calculator-buttons button:focus {
+  background-color: rgba(25, 25, 255, .1);
+}
+main #calculator-screen .calculator-buttons .calculator-button-primary,
+main #calculator-screen .calculator-buttons #calculator-percentage-button {
+  color: white;
+}
+
+main #calculator-screen .calculator-buttons #calculator-equal-button {
+  color: white;
+  background-color: rgb(61, 61, 255);
+  height: 9.75rem;  
+  width: 4rem;
+  border-radius: 13px;
+  margin: .125rem;
+}
+main #calculator-screen .calculator-buttons #calculator-equal-button:hover {
+  background-color: rgb(21, 21, 215);
+}
+
+main .phone-content #secondary-calculator-screen {
+  display: flex;
+  flex-direction: column;
+}
+
+main #calculator-screen .calculator-display {
+  flex: 1;
+  background-color: rgb(25, 25, 25);
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+}
+main #calculator-screen .calculator-display p {
+  margin: 0;
+}
+main #calculator-screen .calculator-display #calculator-text {
+  font-size: 3rem;
+  word-spacing: -7px;
+}
+main #calculator-screen .calculator-display #calculator-text-equal {
+  height: 3rem;
+  font-size: 2rem;
+  color: rgb(201, 201, 201);
+}

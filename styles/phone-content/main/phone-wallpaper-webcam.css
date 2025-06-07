@@ -1,0 +1,18 @@
+main .phone-wallpaper,
+main .phone-webcam {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+main .phone-wallpaper {
+  filter: brightness(65%);
+}
+
+main .phone-webcam {
+  transform: scaleX(-1);
+}

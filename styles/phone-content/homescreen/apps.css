@@ -1,0 +1,50 @@
+main #home-screen .app-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  /* gap: 1.75rem; */
+  column-gap: 1.75rem;
+  row-gap: 3rem;
+  padding: 3rem 0;
+  transition: .4s;
+}
+main #home-screen .app-grid .app {
+  position: relative;
+  height: 3.75rem;
+  width: 3.75rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .2s, outline 0s;
+}
+main #home-screen .app-grid .app:hover {
+  transform: scale(1.1);
+}
+main #home-screen .app-grid .app:focus {
+  transform: scale(1.1);
+  outline: 2px solid white;
+}
+main #home-screen .app-grid .app img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center;
+}
+
+main #home-screen .app-grid .app p {
+  position: absolute;
+  bottom: -42.5%;
+  font-size: .8rem;
+  color: white;
+  z-index: 250;
+  vertical-align: bottom;
+  padding: 0;
+  margin: 0;
+}

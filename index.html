@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Samsung Galaxy A21s Interface - Interactive Mobile Experience">
+  <meta name="description" content="Explore the interactive interface of the Samsung Galaxy A21s. Experience features like lockscreen, webcam, password screen, and more.">
+  <meta name="keywords" content="Samsung Galaxy A21s, mobile interface, smartphone UI, lockscreen, webcam, password screen, interactive mobile features"> 
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./styles/general/general.css">
+  <link rel="stylesheet" href="./styles/header/header.css">
+  <link rel="stylesheet" href="./styles/phone-layout/phone-dimensions.css">
+  <link rel="stylesheet" href="./styles/phone-layout/phone-camera.css">
+  <link rel="stylesheet" href="./styles/phone-layout/phone-keys.css">
+  <link rel="stylesheet" href="./styles/phone-layout/phone-pointer.css">
+  <link rel="stylesheet" href="./styles/phone-content/main/phone-content.css">
+  <link rel="stylesheet" href="./styles/phone-content/main/phone-wallpaper-webcam.css">
+  <link rel="stylesheet" href="./styles/phone-content/main/header/phone-information.css">
+  <link rel="stylesheet" href="./styles/phone-content/lockscreen/phone-time-date.css">
+  <link rel="stylesheet" href="./styles/phone-content/lockscreen/footer/footer.css">
+  <link rel="stylesheet" href="./styles/phone-content/lockscreen/footer/phone-camera-app.css">
+  <link rel="stylesheet" href="./styles/phone-content/lockscreen/footer/swipe-text.css">
+  <link rel="stylesheet" href="./styles/phone-content/passwordscreen/password-grid.css">
+  <link rel="stylesheet" href="./styles/phone-content/passwordscreen/password-input.css">
+  <link rel="stylesheet" href="./styles/phone-content/homescreen/apps.css">
+  <link rel="stylesheet" href="./styles/phone-content/homescreen/apps/calculator.css">
+  <link rel="stylesheet" href="./styles/phone-content/homescreen/apps/notepad.css">
+  <link rel="stylesheet" href="./styles/phone-content/homescreen/apps/weather.css">
+  <title>Samsung A21s</title>
+</head>
+<body>
+  <!-- TITLE  -->
+
+  <header class="hidden-header">Samsung Galaxy A21s Interface</header>
+
+  
+  <main id="phone" aria-label="Samsung Galaxy A21s">
+
+    <!-- MAIN PHONE COMPONENTS -->
+
+    <span class="phone-camera"></span>
+    <section class="phone-keys">
+      <button id="volume-up-key" class="key volume-key" aria-label="Volume Up" role="button"></button>
+      <button id="volume-down-key" class="key volume-key" aria-label="Volume Down" role="button"></button>
+      <button id="phone-unlock-key" class="key" aria-label="Unlock" role="button"></button>
+    </section>
+    <span id="pointer" class="phone-pointer"></span>
+    <video id="webcam" class="phone-webcam" alt="User's Webcam Video" autoplay></video>
+    <i class='bx bx-sun' id="flashlight"></i>
+    <img id="wallpaper" class="phone-wallpaper d-n" src="./images/wallpaper-4.jpeg" alt="Phone's Wallpaper">
+
+    <!-- LOCK SCREEN INTERFACE -->
+
+    <section class="phone-content d-n" id="lock-screen">
+      <div id="secondary-lock-screen" class="secondary-phone-content o-n">
+        <header class="phone-information">
+          <div class="data-service">touch</div>
+          <div class="phone-information-icons">
+            <i class="bx bx-wifi wifi-icon"></i>
+            <i class="bx bx-signal-5 signal-icon"></i>
+            <span class="battery-percent">100%</span>
+            <i class="bx bxs-battery battery-icon"></i>
+          </div>
+          </header>
+          <section class="time-date">
+          <h1 class="time time-date" id="lockscreen-time"></h1>
+          <h2 class="date time-date" id="lockscreen-date"></h2>
+          </section>
+          <footer>
+          <div></div>
+          <div class="swipe-text"><i class="bx bx-lock"></i>Swipe to unlock</div>
+          <div class="phone-camera-app" role="button">
+            <img src="./images/apps/camera.png" alt="Camera App Icon">
+          </div>
+          </footer>
+      </div>
+    </section>
+
+    <!-- PASSWORD SCREEN INTERFACE -->
+
+    <section class="phone-content d-n" id="password-screen">
+      <div id="secondary-password-screen" class="secondary-phone-content">
+        <h3 class="enter-pin">Enter PIN</h3>
+        <h5 class="pin-tip">Your PIN contains at least 4 digits.</h5>
+        <input type="password" id="password-input" class="pass-input" readonly>
+        <section class="password-table">
+          <button class="password-btn password-num-btn">1</button>
+          <button class="password-btn password-num-btn">2</button>
+          <button class="password-btn password-num-btn">3</button>
+          <button class="password-btn password-num-btn">4</button>
+          <button class="password-btn password-num-btn">5</button>
+          <button class="password-btn password-num-btn">6</button>
+          <button class="password-btn password-num-btn">7</button>
+          <button class="password-btn password-num-btn">8</button>
+          <button class="password-btn password-num-btn">9</button>
+          <button class="password-btn" id="password-delete-button"><i class='bx bxs-tag-x'></i></button>
+          <button class="password-btn password-num-btn">0</button>
+          <button class="password-btn" style="font-size: 1.6rem" id="password-submit-button">OK</button>
+        </section>
+      </div>
+    </section>
+
+    <!-- HOMESCREEN SCREEN INTERFACE -->
+
+    <section class="phone-content d-n" id="home-screen">
+      <div id="secondary-home-screen" class="secondary-phone-content">
+        <header class="phone-information">
+          <div id="homescreen-time"></div>
+          <div class="phone-information-icons">
+            <i class="bx bx-wifi wifi-icon"></i>
+            <i class="bx bx-signal-5 signal-icon"></i>
+            <span class="battery-percent">100%</span>
+            <i class="bx bxs-battery battery-icon"></i>
+          </div>
+        </header>
+
+        <section class="app-grid"></section>
+      </div>
+    </section>
+
+    <!-- APPS INTERFACES -->
+
+    <!-- CALCULATOR APPLICATION INTERFACE -->
+    <section class="phone-content phone-content-app d-n" id="calculator-screen">
+      <div id="secondary-calculator-screen" class="secondary-phone-content secondary-phone-content-app">
+        <section class="calculator-display">
+          <p id="calculator-text"></p>
+          <p id="calculator-text-equal"></p>
+        </section>
+          <section class="calculator-buttons">
+          <div>
+            <button class="calculator-button" id="calculator-clear-button">C</button>
+            <button class="calculator-button calculator-button-primary" value="7">7</button>
+            <button class="calculator-button calculator-button-primary" value="4">4</button>
+            <button class="calculator-button calculator-button-primary" value="1">1</button>
+            <button class="calculator-button" id="calculator-percentage-button">%</button>
+          </div>
+          <div>
+            <button class="calculator-button" id="calculator-divide-button" value="/">÷</button>
+            <button class="calculator-button calculator-button-primary" value="8">8</button>
+            <button class="calculator-button calculator-button-primary" value="5">5</button>
+            <button class="calculator-button calculator-button-primary" value="2">2</button>
+            <button class="calculator-button calculator-button-primary" value="0">0</button>
+          </div>
+          <div>
+            <button class="calculator-button" id="calculator-multiply-button" value="*"><i class='bx bx-x'></i></button>
+            <button class="calculator-button calculator-button-primary" value="9">9</button>
+            <button class="calculator-button calculator-button-primary" value="6">6</button>
+            <button class="calculator-button calculator-button-primary" value="3">3</button>
+            <button class="calculator-button calculator-button-primary" value=".">.</button>
+          </div>
+          <div>
+            <button class="calculator-button" id="calculator-delete-button"><i class='bx bxs-tag-x'></i></button>
+            <button class="calculator-button" id="calculator-subtract-button" value="-"><i class='bx bx-minus'></i></button>
+            <button class="calculator-button" id="calculator-add-button" value="+"><i class='bx bx-plus'></i></button>
+            <button class="calculator-button" id="calculator-equal-button">=</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- NOTEPAD APPLICATION INTERFACE -->
+    
+    <section class="phone-content phone-content-app d-n" id="notepad-screen">
+      <div id="secondary-notepad-screen" class="secondary-phone-content secondary-phone-content-app">
+        <section class="list-grid-container">
+          <button class="select-list-grid">
+            <i class='bx  bx-list-ul'></i> 
+          </button>
+        </section>
+        <section class="notes-search-container">
+          <i class='bx  bx-search search-icon'></i> 
+          <input type="text" placeholder="Search">
+        </section>
+        <h1>Today</h1>
+        <section class="notes-container"></section>
+        <section class="note-edit note-create-edit">
+          <header>
+            <div class="note-create-edit-header-left">
+              <button id="note-edit-back">
+                <i class='bx  bx-caret-left'></i> 
+              </button>
+              <span>Notes</span>
+            </div>
+            <div class="note-create-edit-header-right">
+              <button id="note-edit-options">
+                <i class='bx  bx-dots-vertical-rounded'></i> 
+              </button>
+              <button id="note-edit-check">
+                <i class='bx  bx-check'></i> 
+              </button>
+            </div>
+          </header>
+          <main class="note-create-edit-input-fields">
+            <textarea placeholder="Title" rows="2" id="note-edit-input-title"></textarea>
+            <textarea placeholder="Note something down" rows="20" id="note-edit-input-text"></textarea>
+          </main>
+        </section>
+        <section class="note-select-background">
+          <div class="background-container">
+            <button class="background-option" id="background-1" tabindex="-1"></button>
+            <button class="background-option" id="background-2" tabindex="-1"></button>
+            <button class="background-option" id="background-3" tabindex="-1"></button>
+            <button class="background-option" id="background-4" tabindex="-1"></button>
+            <button class="background-option" id="background-5" tabindex="-1"></button>
+          </div>
+        </section>
+        <button class="add-note"><i class='bx  bx-plus'></i> </button>
+      </div>
+    </section>
+
+    <!-- WEATHER APPLICATION INTERFACE -->
+     
+
+    <section class="phone-content phone-content-app d-n" id="weather-screen">
+      <div id="secondary-weather-screen" class="secondary-phone-content secondary-phone-content-app">
+        <section class="current-forecast">
+
+          <section class="input-container">
+            <input type="text" placeholder="City" id="weather-input">
+          </section>
+
+          <section class="weather-display">
+            <div class="weather-info-main">
+              <div class="content">
+                <p class="city" id="city-name"></p>
+                <img id="weather-display-image" src="/images/weather-images/cloudy.png" alt="Weather-Overview">
+                <p class="temp"><span id="temp-degree"></span>&deg;</p>
+                <p class="description" id="temp-description"></p>
+              </div>
+            </div>
+            <div class="weather-info-secondary">
+              <div class="humidity info">
+                <img src="/images/weather-images/humidity.png" alt="Humidity Icon">
+                <p class="humidity-text"><span id="humidity-percentage"></span>%</p>
+                <label>Humidity</label>
+              </div>
+              <div class="wind info">
+                <img src="/images/weather-images/wind.png" alt="Wind Icon">
+                <p class="wind-text"><span id="wind-speed"></span> km/h</p>
+                <label>Wind Speed</label>
+              </div>
+              <div class="air-pressure info">
+                <img src="/images/weather-images/air-pressure.png" alt="Air Pressure Icon">
+                <p class="air-pressure-text" id="air-pressure"></p>
+                <label>Air Pressure</label>
+              </div>
+              <div class="visibility info">
+                <img src="/images/weather-images/visibility.png" alt="Visibility Icon">
+                <p class="visibility-text"><span id="visibility"></span> km</p>
+                <label>Visibility</label>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section class="upcoming-forecast">
+          <div class="content upcoming-forecast-card first-upcoming-forecast-card">
+            <div>
+              <p class="upcoming-day"></p>
+              <img class="upcoming-weather-icon" src="/images/weather-images/cloudy.png" alt="Weather-Overview">
+              <p class="temp"><span class="upcoming-temp-degree">25</span>&deg;C</p>
+            </div>
+          </div>
+          <div class="content upcoming-forecast-card">
+            <p class="upcoming-day"></p>
+            <img class="upcoming-weather-icon" src="/images/weather-images/cloudy.png" alt="Weather-Overview">
+            <p class="temp"><span class="upcoming-temp-degree">25</span>&deg;C</p>
+          </div>
+          <div class="content upcoming-forecast-card">
+            <p class="upcoming-day"></p>
+            <img class="upcoming-weather-icon" src="/images/weather-images/cloudy.png" alt="Weather-Overview">
+            <p class="temp"><span class="upcoming-temp-degree">25</span>&deg;C</p>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- JAVASCRIPT  -->
+  <script src="./scripts/utils/dom_constants.js" type="module"></script>
+  <script src="./scripts/main/main.js" type="module"></script>
+  <script src="./scripts/home_screen/apps_functionality/calculator/calculator_functionality.js" type="module"></script>
+  <script src="./scripts/home_screen/apps_functionality/notepad/notepad_functionality.js" type="module"></script>
+  <script src="./scripts/home_screen/apps_functionality/weather/weather_functionality.js" type="module"></script>
+  <script src="./scripts/home_screen/data/preloadImages.js"></script>
+</body>
+</html>
