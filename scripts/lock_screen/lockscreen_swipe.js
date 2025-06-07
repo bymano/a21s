@@ -27,7 +27,7 @@ function changeLockscreenOpacity(e) {
   // 0.0066 because the unlockPoint is 150 (1 / 150 = 0.0066)
   // Opacity fades to 0 as swipe distance approaches 300px
 
-  phoneLockscreenContent.style.opacity = moveX > moveY ? (1 - moveX * 0.0066) : (1 - moveY * 0.0066);
+  phoneLockscreenContent.style.opacity = moveX > moveY ? (1 - moveX * (1 / unlockPoint)) : (1 - moveY * (1 / unlockPoint));
 }
 
 export function startSwipeTracking(e) {
