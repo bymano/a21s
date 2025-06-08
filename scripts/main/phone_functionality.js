@@ -3,7 +3,7 @@ import { constants } from '../utils/dom_constants.js';
 import { setDisplay } from '../utils/dom_selectors.js';
 import { closeApp } from '../home_screen/homescreen_functionality.js';
 
-const { phoneEl, unlockKey, phonePointer, closeAppBtn, phoneHomescreenContent } = constants;
+const { phoneEl, unlockKey, phonePointer, closeAppBtn } = constants;
 
 export function activateLockKeyFunctionality() {
 unlockKey.addEventListener('click', phoneUnlock);
