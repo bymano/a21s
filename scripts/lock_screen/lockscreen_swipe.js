@@ -1,5 +1,3 @@
-import { passwordScreenUnlock } from '../password_screen/password_functionality.js';
-import { lockscreenLock } from './lockscreen_functionality.js';
 import { constants } from '../utils/dom_constants.js';
 
 // Phone Content Element
@@ -49,14 +47,13 @@ export function stopTrackingOnLeave() {
 
 // On pointer release, unlock if swipe distance >= 300px
 
-export function endSwipeTracking(e) {
+export function endSwipeTracking(e, endFunc) {
   phoneLockscreenContent.style.opacity = 1;
   finalX = e.clientX;
   finalY = e.clientY;
 
   if (Math.abs(initialY - finalY) > unlockPoint || Math.abs(initialX - finalX) > unlockPoint) {
-    lockscreenLock();
-    passwordScreenUnlock();
+    endFunc();
   }
 
   // Stop tracking after unlock

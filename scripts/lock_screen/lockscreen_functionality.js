@@ -1,3 +1,4 @@
+import { passwordScreenUnlock } from '../password_screen/password_functionality.js';
 import { runDateAndTime } from '../utils/time_date.js';
 import { activateCamera, deactivateCamera } from './camera.js';
 import { startSwipeTracking, stopTrackingOnLeave, endSwipeTracking} from './lockscreen_swipe.js';
@@ -16,9 +17,15 @@ export function activateLockscreenFunctionality() {
 
   // Swipe functionality
   phoneLockscreenContent.addEventListener('pointerdown', startSwipeTracking);
-  // Reset opacity and stop tracking if mouse leaves phone screen
+  // Reset opacity and stop tracking if pointer leaves phone screen
   phoneLockscreenContent.addEventListener('pointerleave', stopTrackingOnLeave);
-  phoneLockscreenContent.addEventListener('pointerup', endSwipeTracking);
+
+  phoneLockscreenContent.addEventListener('pointerup', e => {
+    endSwipeTracking(e, () => {
+      lockscreenLock();
+      passwordScreenUnlock();
+    })
+  });
 }
 
 export function lockscreenLock() {
