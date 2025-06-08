@@ -223,7 +223,7 @@ function cutString(str, maxLen) {
 }
 
 function closeEditPage() {
-  closeOptions();
+  closeOptionsFull();
   clearTextareas();
   noteEditPage.classList.remove('note-create-edit-active');
   editorCreate = false;
@@ -233,9 +233,12 @@ function clearTextareas() {
   editNoteTitle.value = '';
   editNoteText.value = '';
 }
+function closeOptionsFull() {
+  closeOptions();
+  noteEditPage.style.backgroundImage = '';
+}
 function closeOptions() {
   document.querySelector('.note-select-background').classList.remove('note-select-background-active');
-  noteEditPage.style.backgroundImage = '';
 }
 
 function toggleOptions() {
@@ -266,6 +269,7 @@ editNoteOptions.addEventListener('click', () => {
 document.querySelectorAll('.background-option').forEach(bg => {
   bg.addEventListener('click', () => {
     selectBackground(bg);
+    closeOptions();
   })
 })
 
