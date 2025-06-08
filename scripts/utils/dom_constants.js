@@ -3,7 +3,7 @@ import { getElById, getElByClass } from './dom_selectors.js';
 // Phone Components
 const phoneEl = getElById('phone');
 const cameraEl = getElById('webcam');
-const unlockBtn = getElById('phone-unlock-key');
+const unlockKey= getElById('phone-unlock-key');
 const phonePointer = getElById('pointer');
 const wallpaperEl = getElById('wallpaper');
 
@@ -29,6 +29,7 @@ const phoneHomescreenContent = getElById('home-screen');
 const secondaryHomescreenContent = getElById('secondary-home-screen');
 const homescreenTimeEl = getElById('homescreen-time');
 const homescreenAppGrid = getElByClass('app-grid');
+const closeAppBtn = getElById('close-app');
 
 let currentScreen = {
   main: phoneLockscreenContent,
@@ -38,7 +39,7 @@ let currentScreen = {
 
 export const constants = {
   phoneEl,
-  unlockBtn,
+  unlockKey,
   phonePointer,
   currentScreen,
   wallpaperEl,
@@ -56,6 +57,7 @@ export const constants = {
   passwordSubmitBtn,
   phoneHomescreenContent,
   secondaryHomescreenContent,
+  closeAppBtn,
   homescreenTimeEl,
   homescreenAppGrid
 }

@@ -27,7 +27,7 @@ main .phone-content-app {
   padding: 0;
 }
 main .phone-content-app .secondary-phone-content-app {
-  height: 100%;
+  height: 99%;
   border-radius: 50px;
 }
 
@@ -42,4 +42,33 @@ main .phone-content .t-s-125 {
 
 main .phone-content .o-n {
   opacity: 0;
+}
+
+
+.close-app-button {
+  position: absolute;
+  bottom: 12px;
+  color: rgba(255, 255, 255, .8);
+  background-color: transparent;
+  border: none;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .25s all, opacity .1s;
+  transform: translateY(10px);
+  z-index: 5;
+  pointer-events: none;
+}
+.close-app-button i {
+  font-size: 1.75rem; 
+}
+.close-app-button:hover {
+  color: white;
+  transform: scale(1.25);
+}
+.close-app-button-active {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
 }

@@ -5,7 +5,7 @@ import { constants } from '../utils/dom_constants.js';
 import { setDisplay } from '../utils/dom_selectors.js';
 import { appLock } from '../utils/app_unlock.js';
 
-const { phoneHomescreenContent, secondaryHomescreenContent, homescreenTimeEl, homescreenAppGrid, wallpaperEl } = constants;  
+const { phoneHomescreenContent, secondaryHomescreenContent, homescreenTimeEl, homescreenAppGrid, wallpaperEl, closeAppBtn } = constants;  
 
 export function activateHomescreenFunctionality() {
   runTime(homescreenTimeEl);
@@ -17,6 +17,13 @@ export function homescreenUnlock() {
   wallpaperEl.src = 'images/wallpaper-3.jpeg';
   unlockAnimation(homescreenAppGrid);
 }
+
+export function closeApp(app) {
+  setDisplay(app, 'none');
+  setDisplay(phoneHomescreenContent, 'initial');
+  constants.currentScreen.main = phoneHomescreenContent;
+}
+
 
 export function loadHomescreenApps() {
   apps.forEach((app) => {
@@ -33,6 +40,7 @@ export function loadHomescreenApps() {
       setTimeout(() => {
         appLock(phoneHomescreenContent);
         app.openFunc();
+        closeAppBtn.classList.add('close-app-button-active');
       }, 25)
     })
     

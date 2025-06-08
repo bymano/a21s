@@ -5,6 +5,9 @@ main #calculator-screen .calculator-buttons {
   align-items: center;
   padding: .5rem;
 }
+main #calculator-screen {
+  background-color: rgb(42, 38, 42);
+}
 
 main #calculator-screen .calculator-buttons div {
   margin: 1rem;

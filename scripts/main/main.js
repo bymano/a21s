@@ -1,14 +1,18 @@
-import { activateLockBtnFunctionality, addPointer } from './phone_functionality.js';
+import { activateLockKeyFunctionality, addPointer, activateCloseAppButton } from './phone_functionality.js';
 import { activateLockscreenFunctionality } from '../lock_screen/lockscreen_functionality.js';
 import { activatePasswordFunctionality } from '../password_screen/password_functionality.js';
 import { activateHomescreenFunctionality } from '../home_screen/homescreen_functionality.js';
 import { loadHomescreenApps } from '../home_screen/homescreen_functionality.js';
 
-// Phone Buttons
-activateLockBtnFunctionality();
+// Phone Keys
+activateLockKeyFunctionality();
+
 
 // Phone Pointer
 addPointer();
+
+// Close App Button
+activateCloseAppButton();
 
 // Lock Screen Functionality
 activateLockscreenFunctionality()

@@ -1,11 +1,12 @@
 import { phoneUnlock } from '../lock_screen/phone_unlock.js';
 import { constants } from '../utils/dom_constants.js';
 import { setDisplay } from '../utils/dom_selectors.js';
+import { closeApp } from '../home_screen/homescreen_functionality.js';
 
-const { phoneEl, unlockBtn, phonePointer } = constants;
+const { phoneEl, unlockKey, phonePointer, closeAppBtn, phoneHomescreenContent } = constants;
 
-export function activateLockBtnFunctionality() {
-unlockBtn.addEventListener('click', phoneUnlock);
+export function activateLockKeyFunctionality() {
+unlockKey.addEventListener('click', phoneUnlock);
 phoneUnlock();
 }
 
@@ -46,5 +47,18 @@ export function addPointer() {
   phoneEl.addEventListener('mouseleave', () => {
     deactivatePointer();
     phoneEl.removeEventListener('mousemove', onMouseMove);
+  })
+}
+
+
+// Phone Back Button
+
+export function activateCloseAppButton() {
+  closeAppBtn.addEventListener('click', () => {
+    const app = constants.currentScreen.app;
+    if (app) {
+      closeApp(app);
+      closeAppBtn.classList.remove('close-app-button-active');
+    }
   })
 }
