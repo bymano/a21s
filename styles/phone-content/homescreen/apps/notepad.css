@@ -13,8 +13,8 @@
   margin: 0 0 3rem 0;
 }
 #secondary-notepad-screen h1 {
-  margin: 1rem 0;
   font-size: 1.25rem;
+  margin: 1rem 0;
 }
 #secondary-notepad-screen .notes-search-container input {
   width: 100%;
@@ -34,14 +34,40 @@
 }
 
 #secondary-notepad-screen .notes-container {
+  padding: .2rem .75rem;
   transition: .3s;
+  height: 68%;
+  /* overflow-y: scroll; */
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(50, 50, 175) rgb(30, 30, 30);
 }
+
+#secondary-notepad-screen .notes-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+#secondary-notepad-screen .notes-container::-webkit-scrollbar-track {
+  background: rgb(30, 30, 30);
+}
+
+#secondary-notepad-screen .notes-container::-webkit-scrollbar-thumb {
+  background-color: rgb(50, 50, 175);
+  border-radius: 4px;
+}
+
+#secondary-notepad-screen .notes-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(102, 102, 102);
+}
+
 #secondary-notepad-screen .notes-container-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-content: start; 
   gap: .65rem;
 }
 #secondary-notepad-screen .notes-container .note {
+  max-height: 75px;
   background-color: rgb(30, 30, 30);
   border-radius: 15px;
   outline: 1px solid rgba(255, 255, 255, .2);

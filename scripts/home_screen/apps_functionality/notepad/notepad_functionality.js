@@ -279,7 +279,7 @@ function toggleListGrid() {
     setTimeout(() => {
       notesContainer.style.opacity = '';
       updateMaxLen();
-      rerenderNotes(20);
+      rerenderNotes();
       notesContainer.classList.remove(grid);
     }, 250)
   } else {  
@@ -288,7 +288,7 @@ function toggleListGrid() {
     setTimeout(() => {
       notesContainer.style.opacity = '';
       updateMaxLen();
-      rerenderNotes(6);
+      rerenderNotes();
       notesContainer.classList.add(grid);
     }, 250)
   }
