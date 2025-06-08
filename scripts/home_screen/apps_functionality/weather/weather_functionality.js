@@ -1,4 +1,4 @@
-import { getElById } from '../../../utils/dom_selectors.js';
+import { getElById, setDisplay } from '../../../utils/dom_selectors.js';
 
 const APIkey = '8313317a31aef5337eed3f913d15621a';
 // Free-tier API key for this project.
@@ -29,6 +29,11 @@ const upComingForecastsEl = document.querySelectorAll('.upcoming-forecast-card')
 const upComingDaysEl = document.querySelectorAll('.upcoming-day');
 const upComingTempsEl = document.querySelectorAll('.upcoming-temp-degree');
 const upComingIconsEl = document.querySelectorAll('.upcoming-weather-icon');
+
+
+const invalidInputPopUp = getElById('invalid-input-page');
+const invalidInputBtn = getElById('invalid-input-button');
+
 
 function average(arr) {
   let average = 0;
@@ -61,6 +66,16 @@ function mostFrequentEl(arr) {
 function getWeekday(date) {
   const day = new Date(date);
   return day.toLocaleString('en-US', { weekday: 'long' });
+}
+
+
+invalidInputBtn.addEventListener('click', () => {
+  setDisplay(invalidInputPopUp, 'none');
+})
+
+function handleInvalidInput() {
+  setDisplay(invalidInputPopUp, 'flex');
+  invalidInputBtn.focus();
 }
 
 function getAverageTemperatures(temps) {
@@ -152,7 +167,7 @@ async function fetchCityWeather(city) {
 async function updateWeather(city) {
   const weather = await fetchCityWeather(city);
   if (!weather) {
-    alert('City not found');
+    handleInvalidInput();
     return;
   }
   cityName.textContent = `${weather.city}, ${weather.countryCode}`;
@@ -196,8 +211,8 @@ async function updateWeather(city) {
 weatherInput.addEventListener('keydown', e => {
   if (e.key === 'Enter') {
     if (e.target.value.trim()) {
-      updateWeather(e.target.value);
       e.target.blur();
+      updateWeather(e.target.value);
       e.target.value = '';
     }
   }

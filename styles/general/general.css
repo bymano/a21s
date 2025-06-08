@@ -28,3 +28,6 @@ body {
 .d-ii {
   display: initial !important;
 }
+.d-f {
+  display: flex !important;
+}
