@@ -5,7 +5,7 @@ import { startSwipeTracking, stopTrackingOnLeave, endSwipeTracking} from './lock
 import { constants } from '../utils/dom_constants.js';
 import { setDisplay } from '../utils/dom_selectors.js';
 
-const { phoneLockscreenContent, secondaryLockscreenContent, lockscreenDateEl, lockscreenTimeEl, cameraApp, cameraEl } = constants;
+const { phoneLockscreenContent, secondaryLockscreenContent, lockscreenDateEl, lockscreenTimeEl, cameraApp, cameraEl, closeAppBtn } = constants;
 
 export function activateLockscreenFunctionality() {
   // Time and Date
@@ -36,6 +36,7 @@ export function lockscreenLock() {
   // Turn off webcam (If turned on)
   deactivateCamera(cameraEl);
   setDisplay(cameraEl, 'none');
+  closeAppBtn.classList.remove('close-app-button-active');
 }
 
 export function lockscreenUnlock() {
