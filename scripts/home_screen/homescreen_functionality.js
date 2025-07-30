@@ -32,8 +32,8 @@ export function loadHomescreenApps() {
     appEl.classList.add('app');
     appEl.ariaLabel = `Open ${app.name} App`;
     appEl.addEventListener('click', () => {
-      if (!app.openFunc && app.name !== "Camera") {
-        window.open(`https://www.${app.name}.com`);
+      if (!app.openFunc) {
+        window.open(`https://www.${app.name !== "Camera" ? app.name : "webcamtoy"}.com`);
         return;
       }
       unlockAnimation(secondaryHomescreenContent)
