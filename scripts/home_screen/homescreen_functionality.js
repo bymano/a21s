@@ -32,7 +32,7 @@ export function loadHomescreenApps() {
     appEl.classList.add('app');
     appEl.ariaLabel = `Open ${app.name} App`;
     appEl.addEventListener('click', () => {
-      if (!app.openFunc) {
+      if (!app.openFunc && app.name !== "Camera") {
         window.open(`https://www.${app.name}.com`);
         return;
       }
