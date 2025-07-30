@@ -1,0 +1,23 @@
+#secondary-clock-screen {
+  background-color: rgb(0, 0, 0);
+  padding: 2.75rem 1.25rem;
+}
+
+#secondary-clock-screen .clock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#secondary-clock-screen .clock-header .settings-container i {
+  font-size: 1.5rem;
+  color: rgb(50, 50, 175);
+  transition: .35s;
+}
+#secondary-clock-screen .clock-header .settings-container i:hover {
+  transform: scale(1.2);
+}
+
+#secondary-clock-screen .clock-footer div {
+  text-align: center;
+  padding: 0 1rem;
+}

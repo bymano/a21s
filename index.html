@@ -8,25 +8,26 @@
   <meta name="keywords" content="Samsung Galaxy A21s, mobile interface, smartphone UI, lockscreen, webcam, password screen, interactive mobile features"> 
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="./styles/general/general.css">
-  <link rel="stylesheet" href="./styles/header/header.css">
-  <link rel="stylesheet" href="./styles/phone-layout/phone-dimensions.css">
-  <link rel="stylesheet" href="./styles/phone-layout/phone-camera.css">
-  <link rel="stylesheet" href="./styles/phone-layout/phone-keys.css">
-  <link rel="stylesheet" href="./styles/phone-layout/phone-pointer.css">
-  <link rel="stylesheet" href="./styles/phone-content/main/phone-content.css">
-  <link rel="stylesheet" href="./styles/phone-content/main/phone-wallpaper-webcam.css">
-  <link rel="stylesheet" href="./styles/phone-content/main/header/phone-information.css">
-  <link rel="stylesheet" href="./styles/phone-content/lockscreen/phone-time-date.css">
-  <link rel="stylesheet" href="./styles/phone-content/lockscreen/footer/footer.css">
-  <link rel="stylesheet" href="./styles/phone-content/lockscreen/footer/phone-camera-app.css">
-  <link rel="stylesheet" href="./styles/phone-content/lockscreen/footer/swipe-text.css">
-  <link rel="stylesheet" href="./styles/phone-content/passwordscreen/password-grid.css">
-  <link rel="stylesheet" href="./styles/phone-content/passwordscreen/password-input.css">
-  <link rel="stylesheet" href="./styles/phone-content/homescreen/apps.css">
-  <link rel="stylesheet" href="./styles/phone-content/homescreen/apps/calculator.css">
-  <link rel="stylesheet" href="./styles/phone-content/homescreen/apps/notepad.css">
-  <link rel="stylesheet" href="./styles/phone-content/homescreen/apps/weather.css">
+  <link rel="stylesheet" href="styles/general/general.css">
+  <link rel="stylesheet" href="styles/header/header.css">
+  <link rel="stylesheet" href="styles/phone-layout/phone-dimensions.css">
+  <link rel="stylesheet" href="styles/phone-layout/phone-camera.css">
+  <link rel="stylesheet" href="styles/phone-layout/phone-keys.css">
+  <link rel="stylesheet" href="styles/phone-layout/phone-pointer.css">
+  <link rel="stylesheet" href="styles/phone-content/main/phone-content.css">
+  <link rel="stylesheet" href="styles/phone-content/main/phone-wallpaper-webcam.css">
+  <link rel="stylesheet" href="styles/phone-content/main/header/phone-information.css">
+  <link rel="stylesheet" href="styles/phone-content/lockscreen/phone-time-date.css">
+  <link rel="stylesheet" href="styles/phone-content/lockscreen/footer/footer.css">
+  <link rel="stylesheet" href="styles/phone-content/lockscreen/footer/phone-camera-app.css">
+  <link rel="stylesheet" href="styles/phone-content/lockscreen/footer/swipe-text.css">
+  <link rel="stylesheet" href="styles/phone-content/passwordscreen/password-grid.css">
+  <link rel="stylesheet" href="styles/phone-content/passwordscreen/password-input.css">
+  <link rel="stylesheet" href="styles/phone-content/homescreen/apps.css">
+  <link rel="stylesheet" href="styles/phone-content/homescreen/apps/calculator.css">
+  <link rel="stylesheet" href="styles/phone-content/homescreen/apps/notepad.css">
+  <link rel="stylesheet" href="styles/phone-content/homescreen/apps/weather.css">
+  <link rel="stylesheet" href="styles/phone-content/homescreen/apps/clock.css">
   <title>Samsung A21s</title>
 </head>
 <body>
@@ -48,11 +49,11 @@
     <span id="pointer" class="phone-pointer"></span>
     <video id="webcam" class="phone-webcam" alt="User's Webcam Video" autoplay></video>
     <i class='bx bx-sun' id="flashlight"></i>
-    <img id="wallpaper" class="phone-wallpaper d-n" src="images/wallpaper-4.jpeg" alt="Phone's Wallpaper">
+    <img id="wallpaper" class="phone-wallpaper d-i" src="images/wallpaper-4.jpeg" alt="Phone's Wallpaper">
     
     <!-- LOCK SCREEN INTERFACE -->
     
-    <section class="phone-content d-n" id="lock-screen">
+    <section class="phone-content d-nn" id="lock-screen">
       <div id="secondary-lock-screen" class="secondary-phone-content o-n">
         <header class="phone-information">
           <div class="data-service">touch</div>
@@ -283,14 +284,48 @@
         </section>
       </div>
     </section>
-  </main>
 
+    <!-- CLOCK APPLICATION INTERFACE -->
+    <section class="phone-content phone-content-app d-ii" id="clock-screen">
+      <div id="secondary-clock-screen" class="secondary-phone-content secondary-phone-content-app">
+
+        <header class="clock-header">
+          <div class="page-label">
+            <p class="page-name">Alarm</p>
+          </div>
+          <div class="settings-container">
+            <i class='bx bxs-cog'></i>            
+          </div>
+        </header>
+
+        <footer class="clock-footer">
+          <div class="alarm-container">
+            <div class="icon-container"><i class='bx bxs-alarm'></i></div>
+            <p class="section-name">Alarm</p>
+          </div>
+          <div class="clock-container">
+            <div class="icon-container"><i class='bx bxs-time'></i></div>
+            <p class="section-name">Clock</p>
+          </div>
+          <div class="timer-container">
+            <div class="icon-container"><i class='bx bx-hourglass'></i></div>
+            <p class="section-name">Timer</p>
+          </div>
+          <div class="stopwatch-container">
+            <div class="icon-container"><i class='bx bx-stopwatch'></i></div>
+            <p class="section-name">Stopwatch</p>
+          </div>
+        </footer>
+      </div>
+    </section>
+
+  </main>
   <!-- JAVASCRIPT  -->
-  <script src="./scripts/utils/dom_constants.js" type="module"></script>
-  <script src="./scripts/main/main.js" type="module"></script>
-  <script src="./scripts/home_screen/apps_functionality/calculator/calculator_functionality.js" type="module"></script>
-  <script src="./scripts/home_screen/apps_functionality/notepad/notepad_functionality.js" type="module"></script>
-  <script src="./scripts/home_screen/apps_functionality/weather/weather_functionality.js" type="module"></script>
-  <script src="./scripts/home_screen/data/preloadImages.js"></script>
+  <script src="scripts/utils/dom_constants.js" type="module"></script>
+  <script src="scripts/main/main.js" type="module"></script>
+  <script src="scripts/home_screen/apps_functionality/calculator/calculator_functionality.js" type="module"></script>
+  <script src="scripts/home_screen/apps_functionality/notepad/notepad_functionality.js" type="module"></script>
+  <script src="scripts/home_screen/apps_functionality/weather/weather_functionality.js" type="module"></script>
+  <script src="scripts/home_screen/data/preloadImages.js"></script>
 </body>
 </html>

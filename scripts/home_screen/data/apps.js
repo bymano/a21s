@@ -11,8 +11,8 @@ export const apps = [
     name: 'Weather',
     imagePath: 'images/apps/weather.webp',
   }, {
-    name: 'Camera',
-    imagePath: 'images/apps/camera.png',
+    name: 'Clock',
+    imagePath: 'images/apps/clock.png',
   }, {
     name: 'Chrome',
     imagePath: 'images/apps/google-chrome.png',
