@@ -22,4 +22,4 @@ activatePasswordFunctionality();
 
 // Home Screen Functionality
 activateHomescreenFunctionality();
-loadHomescreenApps();
+loadHomescreenApps()

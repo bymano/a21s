@@ -33,3 +33,51 @@
   font-size: .85rem;
   margin: 0;
 }
+
+
+#secondary-clock-screen main .clock-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: .75rem;
+  height: 250px;
+}
+#secondary-clock-screen main .clock-icon-container img {
+  position: absolute;
+}
+#secondary-clock-screen main .clock-icon-container .clock-hands {
+  margin-bottom: 52%;
+}
+#secondary-clock-screen main .clock-icon-container .second-hand,
+#secondary-clock-screen main .clock-icon-container .minute-hand,
+#secondary-clock-screen main .clock-icon-container .hour-hand {
+  position: absolute;
+  width: 1px;
+  border-radius: 1px;
+  transform-origin: bottom;
+  animation-name: rotateHand;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+#secondary-clock-screen main .clock-icon-container .second-hand {
+  height: 100px;
+  background-color: red;
+  animation-duration: 60s;
+}
+#secondary-clock-screen main .clock-icon-container .minute-hand {
+  height: 85px;
+  margin-top: 15px;
+  background-color: white;
+  animation-duration: 3600s;
+}
+#secondary-clock-screen main .clock-icon-container .hour-hand {
+  height: 50px;
+  margin-top: 50px;
+  background-color: white;
+  animation-duration: 43200s;
+}
+@keyframes rotateHand {
+  100% {
+    transform: rotate(360deg);
+  }
+}

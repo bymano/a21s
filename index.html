@@ -53,7 +53,7 @@
     
     <!-- LOCK SCREEN INTERFACE -->
     
-    <section class="phone-content d-i" id="lock-screen">
+    <section class="phone-content d-n" id="lock-screen">
       <div id="secondary-lock-screen" class="secondary-phone-content o-n">
         <header class="phone-information">
           <div class="data-service">touch</div>
@@ -286,7 +286,7 @@
     </section>
 
     <!-- CLOCK APPLICATION INTERFACE -->
-    <section class="phone-content phone-content-app d-n" id="clock-screen">
+    <section class="phone-content phone-content-app d-i" id="clock-screen">
       <div id="secondary-clock-screen" class="secondary-phone-content secondary-phone-content-app">
 
         <header class="clock-header">
@@ -297,6 +297,18 @@
             <i class='bx bxs-cog'></i>            
           </div>
         </header>
+
+        <main>
+          <div class="clock-icon-container">
+            <img src="images/clock-images/clock-icon.webp" alt="Analog Clock | Roman Numerals" width="225" height="225">
+            <div class="clock-hands">
+              <div class="hour-hand" id="clock-hour-hand"></div>
+              <div class="minute-hand" id="clock-minute-hand"></div>
+              <div class="second-hand" id="clock-second-hand"></div>
+            </div>
+          </div>
+        </main>
+
 
         <footer class="clock-footer">
           <div class="alarm-container">
@@ -326,6 +338,7 @@
   <script src="scripts/home_screen/apps_functionality/calculator/calculator_functionality.js" type="module"></script>
   <script src="scripts/home_screen/apps_functionality/notepad/notepad_functionality.js" type="module"></script>
   <script src="scripts/home_screen/apps_functionality/weather/weather_functionality.js" type="module"></script>
+  <script src="scripts/home_screen/apps_functionality/clock/clock_functionality.js" type="module"></script>
   <script src="scripts/home_screen/data/preloadImages.js"></script>
 </body>
 </html>

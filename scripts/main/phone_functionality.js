@@ -7,7 +7,6 @@ const { phoneEl, unlockKey, phonePointer, closeAppBtn } = constants;
 
 export function activateLockKeyFunctionality() {
 unlockKey.addEventListener('click', phoneUnlock);
-phoneUnlock();
 }
 
 // Phone Pointer Functionality
