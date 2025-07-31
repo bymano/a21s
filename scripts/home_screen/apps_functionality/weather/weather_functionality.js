@@ -6,13 +6,13 @@ const APIkey = '8313317a31aef5337eed3f913d15621a';
 // In production, use secure storage.
 
 const weatherIcons = [];
-weatherIcons[1] = 'images/weather-images/Sunny.png';
-weatherIcons[2] = 'images/weather-images/partly-cloudy.png';
-weatherIcons[3] = weatherIcons[4] = 'images/weather-images/cloudy.png';
-weatherIcons[10] = 'images/weather-images/rainy.png';
-weatherIcons[11] = 'images/weather-images/thunderstorm.png';
-weatherIcons[13] = 'images/weather-images/snowy.png';
-weatherIcons[50] = 'images/weather-images/fog.png';
+weatherIcons[1] = 'images/weather-images/Sunny.webp';
+weatherIcons[2] = 'images/weather-images/partly-cloudy.webp';
+weatherIcons[3] = weatherIcons[4] = 'images/weather-images/cloudy.webp';
+weatherIcons[10] = 'images/weather-images/rainy.webp';
+weatherIcons[11] = 'images/weather-images/thunderstorm.webp';
+weatherIcons[13] = 'images/weather-images/snowy.webp';
+weatherIcons[50] = 'images/weather-images/fog.webp';
 
 const weatherInput = getElById('weather-input');
 const tempDegree = getElById('temp-degree');
@@ -117,7 +117,7 @@ async function fetchCoordinatesWeather(lat, lon) {
   if (weatherIcons[parseInt(weatherIcon)]) {
     weatherImage.src = weatherIcons[parseInt(weatherIcon)]; 
   } else {
-    weatherImage.src = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
+    weatherImage.src = `https://openweathermap.org/img/wn/${weatherIcon}@2x.webp`;
   }
 
   const averageTemps = getAverageTemperatures(weatherData.list);
@@ -201,7 +201,7 @@ async function updateWeather(city) {
     if (weatherIcons[parseInt(weatherIcon)]) {
       upComingIconsEl[i].src = weatherIcons[parseInt(weatherIcon)]; 
     } else {
-      upComingIconsEl[i].src = `https://openweathermap.org/img/wn/${weatherIcon}@2x.png`;
+      upComingIconsEl[i].src = `https://openweathermap.org/img/wn/${weatherIcon}@2x.webp`;
     }
     i++;
   }

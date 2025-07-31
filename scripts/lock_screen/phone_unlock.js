@@ -19,7 +19,7 @@ export function phoneUnlock() {
     document.querySelectorAll('.phone-content-app').forEach(appEl => {
       setDisplay(appEl, 'none');
     })
-    wallpaperEl.src = 'images/wallpaper-4.jpeg';
+    wallpaperEl.src = 'images/wallpaper-4.webp';
   }
   
   if (constants.currentScreen.main !== phonePasswordScreenContent) {

@@ -3,4 +3,4 @@ function preloadImage(path) {
   preloadedImage.src = path;
 }
 
-preloadImage('images/wallpaper-3.jpeg')
+preloadImage('images/wallpaper-3.webp')

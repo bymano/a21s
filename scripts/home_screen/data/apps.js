@@ -6,16 +6,16 @@ export const apps = [
 
   {
     name: 'Calculator',
-    imagePath: 'images/apps/calculator.png',
+    imagePath: 'images/apps/calculator.webp',
     }, {
     name: 'Weather',
     imagePath: 'images/apps/weather.webp',
   }, {
     name: 'Clock',
-    imagePath: 'images/apps/clock.png',
+    imagePath: 'images/apps/clock.webp',
   }, {
     name: 'Chrome',
-    imagePath: 'images/apps/google-chrome.png',
+    imagePath: 'images/apps/google-chrome.webp',
   }, {
     name: 'Instagram',
     imagePath: 'images/apps/instagram.webp',
@@ -27,19 +27,19 @@ export const apps = [
     imagePath: 'images/apps/tiktok.webp',
   }, {
     name: 'Whatsapp',
-    imagePath: 'images/apps/whatsapp.png',
+    imagePath: 'images/apps/whatsapp.webp',
   }, {
     name: 'Youtube',
-    imagePath: 'images/apps/youtube.png',
+    imagePath: 'images/apps/youtube.webp',
   }, {
     name: 'Netflix',
-    imagePath: 'images/apps/netflix.jpg',
+    imagePath: 'images/apps/netflix.webp',
   }, {
     name: 'Notepad',
-    imagePath: 'images/apps/notepad.png',
+    imagePath: 'images/apps/notepad.webp',
   }, {
     name: 'Gmail',
-    imagePath: 'images/apps/gmail.jpg',
+    imagePath: 'images/apps/gmail.webp',
   }
 ]
 

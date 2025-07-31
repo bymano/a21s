@@ -64,7 +64,7 @@
 #secondary-weather-screen .weather-display .weather-info-main,
 #secondary-weather-screen .upcoming-forecast .first-upcoming-forecast-card {
   text-align: center;
-  background-image: url('../../../../images/weather-images/cloud-wallpaper.jpg');
+  background-image: url('../../../../images/weather-images/cloud-wallpaper.webp');
   background-position: center;
   background-size: cover;
   border-radius: 16%;

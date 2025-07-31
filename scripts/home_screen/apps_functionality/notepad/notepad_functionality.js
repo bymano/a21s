@@ -252,7 +252,7 @@ function toggleOptions() {
 
 function selectBackground(el) {
   const bgId = el.id[el.id.length - 1];
-  const image = `images/notepad-images/wallpaper-${bgId}.jpeg`;
+  const image = `images/notepad-images/wallpaper-${bgId}.webp`;
   notes.forEach(note => {
     if (note.id === editorId) {
       note.background = image;
