@@ -51,7 +51,6 @@
 #secondary-clock-screen main .clock-icon-container .second-hand,
 #secondary-clock-screen main .clock-icon-container .minute-hand,
 #secondary-clock-screen main .clock-icon-container .hour-hand {
-  position: absolute;
   width: 1px;
   border-radius: 1px;
   transform-origin: bottom;
@@ -59,6 +58,14 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+
+#secondary-clock-screen main .clock-icon-container .clock-hands .second-hand-container,
+#secondary-clock-screen main .clock-icon-container .clock-hands .minute-hand-container,
+#secondary-clock-screen main .clock-icon-container .clock-hands .hour-hand-container {
+  position: absolute;
+  transform-origin: bottom;
+}
+
 #secondary-clock-screen main .clock-icon-container .second-hand {
   height: 100px;
   background-color: red;

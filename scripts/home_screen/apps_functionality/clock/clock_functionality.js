@@ -1,6 +1,6 @@
-const secondHand = document.getElementById("clock-second-hand");
-const minuteHand = document.getElementById("clock-minute-hand");
-const hourHand = document.getElementById("clock-hour-hand");
+const secondHandContainer = document.getElementById("second-hand-container");
+const minuteHandContainer = document.getElementById("minute-hand-container");
+const hourHandContainer = document.getElementById("hour-hand-container");
 
 function rotateForCurrentTime() {
   const now = new Date();
@@ -12,9 +12,9 @@ function rotateForCurrentTime() {
   const hourDeg = (hours / 12) * 360 + minuteDeg / 12;
   const secondDeg = (seconds / 60) * 360;
 
-  hourHand.style.transform = `rotate(${hourDeg}deg)`;
-  minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
-  secondHand.style.transform = `rotate(${secondDeg}deg)`;
+  hourHandContainer.style.transform = `rotate(${hourDeg}deg)`;
+  minuteHandContainer.style.transform = `rotate(${minuteDeg}deg)`;
+  secondHandContainer.style.transform = `rotate(${secondDeg}deg)`;
 
 }
 
