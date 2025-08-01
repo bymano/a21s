@@ -88,3 +88,73 @@
     transform: rotate(360deg);
   }
 }
+
+#secondary-clock-screen main .add-alarm-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+#secondary-clock-screen main .add-alarm-container .add-alarm {
+  font-size: 1.75rem;
+  color: white;
+  background-color: blue;
+  border: none;
+  border-radius: 50%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  transition: .3s;
+}
+#secondary-clock-screen main .add-alarm-container .add-alarm:hover {
+  box-shadow: 0 0 35px blue;
+}
+
+#secondary-clock-screen .clock-footer .alarm-container {
+  color: blue;
+}
+
+#secondary-clock-screen .alarm-list-container p {
+  margin: 0;
+}
+#secondary-clock-screen .alarm-list-container .alarm-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+}
+#secondary-clock-screen .alarm-list-container .alarm-container .alarm-info .alarm-time {
+  font-size: 2rem;
+  font-weight: 200;
+}
+#secondary-clock-screen .alarm-list-container .alarm-container .alarm-info .alarm-time .alarm-meridiem {
+  font-size: .8rem;
+  margin-left: .2rem;
+  color: rgba(255, 255, 255, .75);
+}
+#secondary-clock-screen .alarm-list-container .alarm-container .alarm-info .alarm-day {
+  font-size: .9rem;
+  color: rgba(255, 255, 255 , .6);
+}
+
+
+#secondary-clock-screen .alarm-list-container .alarm-container .alarm-toggle button {
+  background-color: rgb(100, 100, 100);
+  border: none;
+  border-radius: 25px;
+  width: 3rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: .2rem;
+  transition: .3s;
+}
+#secondary-clock-screen .alarm-list-container .alarm-container .alarm-toggle button:hover {
+  background-color: rgb(160, 160, 160);
+}
+#secondary-clock-screen .alarm-list-container .alarm-container .alarm-toggle button div {
+  height: 1.15rem;
+  width: 1.15rem;
+  background-color: white;
+  border-radius: 50%;
+}
