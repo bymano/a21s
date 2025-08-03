@@ -321,7 +321,7 @@
                 <p class="alarm-day">Tomorrow</p>
               </div>
               <div class="alarm-toggle">
-                <button class="clock-toggle-button"><div></div></button>
+                <button class="clock-toggle-button" data-state="off"><div></div></button>
               </div>
             </div>
             <div class="alarm-container">
@@ -330,7 +330,7 @@
                 <p class="alarm-day">Tomorrow</p>
               </div>
               <div class="alarm-toggle">
-                <button class="clock-toggle-button"><div></div></button>
+                <button class="clock-toggle-button" data-state="off"><div></div></button>
               </div>
             </div>
             <div class="alarm-container">
@@ -339,7 +339,7 @@
                 <p class="alarm-day">Tomorrow</p>
               </div>
               <div class="alarm-toggle">
-                <button class="clock-toggle-button"><div></div></button>
+                <button class="clock-toggle-button" data-state="off"><div></div></button>
               </div>
             </div>
             
@@ -349,7 +349,7 @@
             <button class="add-alarm" id="clock-add-alarm"><i class='bx  bx-plus'></i> </button>
           </div>
 
-          <div class="create-alarm-page">
+          <div class="create-alarm-page" id="create-alarm-page">
             <div class="create-alarm-page-header">
               <button id="create-alarm-back-button"><i class="bx bx-caret-left"></i></button>
               <label>Add alarm</label>
@@ -360,8 +360,8 @@
                 <span>PM</span>
               </div>
               <div class="create-alarm-time">
-                <div class="hours">08<span class="time-measuring-unit">h</span></div>
-                <div class="minutes">01<span class="time-measuring-unit">m</span></div>
+                <div class="hours"><span id="create-alarm-time-hour"></span><span class="time-measuring-unit">h</span></div>
+                <div class="minutes"><span id="create-alarm-time-minute"></span><span class="time-measuring-unit">m</span></div>
               </div>
             </div>
             <div class="repeat-selection">
@@ -385,7 +385,7 @@
                 <label>Vibrate</label>
                 <span>Vibrate when ringing</span>
               </div>
-              <button class="clock-toggle-button"><div></div></button>
+              <button class="clock-toggle-button" data-state="off"><div></div></button>
             </div>
             <div class="create-alarm-label-selection">
               <label>Label</label>
@@ -399,6 +399,7 @@
                 <span class="fourth">06</span>
                 <span class="fifth">07</span>
               </div>
+              <div class="shadow"></div>
               <div class="alarm-minute-selection">
                 <span class="first">44</span>
                 <span class="second">45</span>
@@ -406,10 +407,11 @@
                 <span class="fourth">47</span>
                 <span class="fifth">48</span>
               </div>
+              <div class="shadow"></div>
             </div>
             <div class="create-alarm-options">
-              <button class="create-alarm-cancel">CANCEL</button>
-              <button class="create-alarm-approve">SAVE</button>
+              <button class="create-alarm-cancel" id="create-alarm-cancel">CANCEL</button>
+              <button class="create-alarm-approve" id="create-alarm-approve">SAVE</button>
             </div>
           </div>
 

@@ -139,24 +139,34 @@
 
 
 .clock-toggle-button {
-  background-color: rgb(100, 100, 100);
   border: none;
   border-radius: 25px;
   width: 3rem;
   display: flex;
-  justify-content: left;
   align-items: center;
   padding: .2rem;
   transition: .3s;
 }
-.clock-toggle-button:hover {
+.clock-toggle-button[data-state="off"] {
+  background-color: rgb(100, 100, 100);
+  justify-content: start;
+}
+.clock-toggle-button[data-state="on"] {
+  background-color: blue;
+  justify-content: end;
+}
+.clock-toggle-button[data-state="off"]:hover {
   background-color: rgb(160, 160, 160);
+}
+.clock-toggle-button[data-state="on"]:hover {
+  background-color: rgb(101, 101, 255);
 }
 .clock-toggle-button div {
   height: 1.15rem;
   width: 1.15rem;
   background-color: white;
   border-radius: 50%;
+  transition: .3s;
 }
 
 .create-alarm-page {
@@ -168,6 +178,13 @@
   background-color: black;
   padding: 3.5rem 1.5rem;
   z-index: 2;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: .3s;
+}
+
+.create-alarm-page-active {
+  transform: scaleX(1);
 }
 
 .create-alarm-page-header {
@@ -179,17 +196,15 @@
   color: blue;
   background-color: black;
   border: none;
-  border-radius: 50%;
+  margin-right: .5rem;
+  margin-left: -1rem;
+  transition: .125s;
+}
+.create-alarm-page-header button i {
   font-size: 2.25rem;
-  padding: .1rem;
-  margin-right: .425rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: .3s;
 }
 .create-alarm-page-header button:hover {
-  background-color: rgb(54, 54, 54);
+  transform: scale(1.25);
 }
 .create-alarm-page-header label {
   font-size: 1.15rem;
@@ -226,8 +241,8 @@
   font-size: 3rem;
 }
 .display-timer-time .create-alarm-time div .time-measuring-unit {
-  font-size: .75rem;
-  margin-left: .25rem;
+  font-size: 1rem;
+  margin-left: .5rem;
 }
 
 .create-alarm-page .repeat-day-select {
@@ -311,12 +326,12 @@
 .create-alarm-page .create-alarm-options button {
   font-size: 1.125rem;
   font-weight: 500;
+  width: 12rem;
   color: white;
   background-color: blue;
   border: none;
   border-radius: 50px;
-  padding: .5rem 3rem;
-  margin: 1.5rem 0;
+  padding: .5rem 0;
   transition: .3s;
 }
 .create-alarm-page .create-alarm-options button:hover {
@@ -326,23 +341,23 @@
 
 .create-alarm-page .alarm-time-selection {
   width: 100%;
-  margin: 6rem 0 2.5rem 0; 
+  margin-top: 4rem; 
 }
-.create-alarm-page .alarm-time-selection div {
-  box-shadow: 0 -35px 35px -6px rgba(0, 0, 255, 0.1);
+.create-alarm-page .alarm-time-selection .shadow {
+  box-shadow: 0 -35px 35px -6px rgba(0, 0, 255, 0.4);
   height: 3rem;
-  width: 100%;
   border-radius: 50%;
 }
-.create-alarm-page .alarm-time-selection .alarm-hour-selection {
-  margin-bottom: 3.75rem;
+.create-alarm-page .alarm-time-selection div {
+  width: 100%;
 }
 .create-alarm-page .alarm-time-selection div span {
-  margin: 0 1rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 .create-alarm-page .alarm-time-selection div .first,
 .create-alarm-page .alarm-time-selection div .fifth {
-  color: rgba(255, 255, 255, .1);
+  color: rgba(255, 255, 255, .125);
 }
 .create-alarm-page .alarm-time-selection div .second,
 .create-alarm-page .alarm-time-selection div .fourth {
