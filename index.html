@@ -321,7 +321,7 @@
                 <p class="alarm-day">Tomorrow</p>
               </div>
               <div class="alarm-toggle">
-                <button><div></div></button>
+                <button class="clock-toggle-button"><div></div></button>
               </div>
             </div>
             <div class="alarm-container">
@@ -330,7 +330,7 @@
                 <p class="alarm-day">Tomorrow</p>
               </div>
               <div class="alarm-toggle">
-                <button><div></div></button>
+                <button class="clock-toggle-button"><div></div></button>
               </div>
             </div>
             <div class="alarm-container">
@@ -339,7 +339,7 @@
                 <p class="alarm-day">Tomorrow</p>
               </div>
               <div class="alarm-toggle">
-                <button><div></div></button>
+                <button class="clock-toggle-button"><div></div></button>
               </div>
             </div>
             
@@ -347,6 +347,70 @@
 
           <div class="add-alarm-container">
             <button class="add-alarm" id="clock-add-alarm"><i class='bx  bx-plus'></i> </button>
+          </div>
+
+          <div class="create-alarm-page">
+            <div class="create-alarm-page-header">
+              <button id="create-alarm-back-button"><i class="bx bx-caret-left"></i></button>
+              <label>Add alarm</label>
+            </div>
+            <div class="display-timer-time">
+              <div class="create-alarm-meridiem">
+                <span>AM</span>
+                <span>PM</span>
+              </div>
+              <div class="create-alarm-time">
+                <div class="hours">08<span class="time-measuring-unit">h</span></div>
+                <div class="minutes">01<span class="time-measuring-unit">m</span></div>
+              </div>
+            </div>
+            <div class="repeat-selection">
+              <label>Repeat</label>
+              <div class="repeat-day-select">
+                <button id="clock-repeat-sunday">S</button>
+                <button id="clock-repeat-monday">M</button>
+                <button id="clock-repeat-tuesday">T</button>
+                <button id="clock-repeat-wednesday">W</button>
+                <button id="clock-repeat-thursday">T</button>
+                <button id="clock-repeat-friday">F</button>
+                <button id="clock-repeat-saturday">S</button>
+              </div>
+            </div>
+            <div class="ringtone-selection">
+              <label>Ringtone</label>
+              <div class="create-alarm-ringtone">Default (Afternoon of Konoha) <i class="bx bx-caret-right"></i></div>
+            </div>
+            <div class="vibrate-selection">
+              <div class="vibrate-labeling">
+                <label>Vibrate</label>
+                <span>Vibrate when ringing</span>
+              </div>
+              <button class="clock-toggle-button"><div></div></button>
+            </div>
+            <div class="create-alarm-label-selection">
+              <label>Label</label>
+              <i class="bx bx-caret-right"></i>
+            </div>
+            <div class="alarm-time-selection">
+              <div class="alarm-hour-selection">
+                <span class="first">03</span>
+                <span class="second">04</span>
+                <span class="third">05</span>
+                <span class="fourth">06</span>
+                <span class="fifth">07</span>
+              </div>
+              <div class="alarm-minute-selection">
+                <span class="first">44</span>
+                <span class="second">45</span>
+                <span class="third">46</span>
+                <span class="fourth">47</span>
+                <span class="fifth">48</span>
+              </div>
+            </div>
+            <div class="create-alarm-options">
+              <button class="create-alarm-cancel">CANCEL</button>
+              <button class="create-alarm-approve">SAVE</button>
+            </div>
           </div>
 
         </main>

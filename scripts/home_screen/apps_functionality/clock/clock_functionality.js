@@ -1,6 +1,8 @@
-const secondHandContainer = document.getElementById("second-hand-container");
-const minuteHandContainer = document.getElementById("minute-hand-container");
-const hourHandContainer = document.getElementById("hour-hand-container");
+import { getElById } from "../../../utils/dom_selectors.js";
+
+const secondHandContainer = getElById("second-hand-container")
+const minuteHandContainer = getElById("minute-hand-container")
+const hourHandContainer = getElById("hour-hand-container")
 
 function rotateForCurrentTime() {
   const now = new Date();
