@@ -72,8 +72,8 @@
   animation-duration: 60s;
 }
 #secondary-clock-screen main .clock-icon-container .minute-hand {
-  height: 85px;
-  margin-top: 15px;
+  height: 75px;
+  margin-top: 25px;
   background-color: white;
   animation-duration: 3600s;
 }
@@ -114,6 +114,13 @@
   color: blue;
 }
 
+#secondary-clock-screen .alarm-list-container {
+  height: 22.25rem;
+  overflow-y: scroll;
+}
+#secondary-clock-screen .alarm-list-container::-webkit-scrollbar {
+  width: 0;
+}
 #secondary-clock-screen .alarm-list-container p {
   margin: 0;
 }
@@ -124,8 +131,9 @@
   margin: 2rem 0;
 }
 #secondary-clock-screen .alarm-list-container .alarm-container .alarm-info .alarm-time {
-  font-size: 2rem;
+  font-size: 2.75rem;
   font-weight: 200;
+  letter-spacing: 1px;
 }
 #secondary-clock-screen .alarm-list-container .alarm-container .alarm-info .alarm-time .alarm-meridiem {
   font-size: .8rem;
@@ -167,6 +175,7 @@
   background-color: white;
   border-radius: 50%;
   transition: .3s;
+  pointer-events: none;
 }
 
 .create-alarm-page {
@@ -218,20 +227,10 @@
   margin-bottom: 1.75rem;
 }
 .display-timer-time .create-alarm-meridiem {
-  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
+  row-gap: .25rem;
   align-items: center;
-}
-.display-timer-time .create-alarm-meridiem span {
-  transition: .3s;
-}
-.display-timer-time .create-alarm-meridiem span:first-child {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, .6);
-}
-.display-timer-time .create-alarm-meridiem span:hover {
-  transform: scale(1.35);
 }
 .display-timer-time .create-alarm-time {
   display: flex;
@@ -340,7 +339,6 @@
 }
 
 .create-alarm-page .alarm-time-selection {
-  width: 100%;
   margin-top: 4rem; 
 }
 .create-alarm-page .alarm-time-selection .shadow {
@@ -348,21 +346,17 @@
   height: 3rem;
   border-radius: 50%;
 }
-.create-alarm-page .alarm-time-selection div {
-  width: 100%;
-}
 .create-alarm-page .alarm-time-selection div span {
-  margin-right: 1rem;
-  margin-left: 1rem;
+  margin: 0 1.25rem;
 }
 .create-alarm-page .alarm-time-selection div .first,
 .create-alarm-page .alarm-time-selection div .fifth {
-  color: rgba(255, 255, 255, .125);
+  color: rgba(255, 255, 255, .3);
 }
 .create-alarm-page .alarm-time-selection div .second,
 .create-alarm-page .alarm-time-selection div .fourth {
   font-size: 1.75rem;
-  color: rgba(255, 255, 255, .25);
+  color: rgba(255, 255, 255, .4);
 }
 .create-alarm-page .alarm-time-selection div .third {
   font-size: 2.75rem;
