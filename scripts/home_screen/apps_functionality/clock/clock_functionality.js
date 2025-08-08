@@ -25,22 +25,22 @@ const meridiemContainer = document.querySelector(".create-alarm-meridiem");
 const meridiemSpans = meridiemContainer.querySelectorAll("span");
 
 // --- STATE ---
-let currMeridiem = "";
 let currRingtone = "Afternoon of Konoha";
 let currLabel = "";
 let currPlayingAlarm;
 
-const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const alarms = [];
-
-let hourIndex = 2;    // centered item for hours
-let minuteIndex = 2;  // centered item for minutes
+let hourIndex = 2;
+let minuteIndex = 2;
 let meridiemIndex = 0; // 0 = AM, 1 = PM
 
 // --- UTILITY FUNCTIONS ---
 function handleClockButtonClick(btn) {
   btn.addEventListener("click", () => {
-    btn.dataset.state = btn.dataset.state === "off" ? "on" : "off";
+    const isOff = btn.dataset.state === "off";
+    btn.dataset.state = isOff ? "on" : "off";
+    btn.classList.toggle("clock-toggle-on", isOff);
+    btn.classList.toggle("clock-toggle-off", !isOff);
   });
 }
 
@@ -54,9 +54,9 @@ function rotateForCurrentTime() {
   const minuteDeg = (minutes / 60) * 360 + secondDeg / 60;
   const hourDeg = (hours / 12) * 360 + minuteDeg / 12;
 
-  hourHandContainer.style.transform = `rotate(${hourDeg}deg)`;
-  minuteHandContainer.style.transform = `rotate(${minuteDeg}deg)`;
   secondHandContainer.style.transform = `rotate(${secondDeg}deg)`;
+  minuteHandContainer.style.transform = `rotate(${minuteDeg}deg)`;
+  hourHandContainer.style.transform = `rotate(${hourDeg}deg)`;
 }
 
 function openCreateAlarmPage() {
@@ -64,16 +64,13 @@ function openCreateAlarmPage() {
 
   const now = new Date();
   let hours = now.getHours() % 12 || 12;
-  if (hours < 10) hours = "0" + hours;
   let minutes = now.getMinutes();
-  if (minutes < 10) minutes = "0" + minutes;
 
-  createAlarmPageHour.textContent = hours;
-  createAlarmPageMinute.textContent = minutes;
+  createAlarmPageHour.textContent = hours.toString().padStart(2, "0");
+  createAlarmPageMinute.textContent = minutes.toString().padStart(2, "0");
 
-  // --- ADDED: Update scroll pickers to match current time ---
-  hourIndex = parseInt(hours, 10) - 1;
-  minuteIndex = parseInt(minutes, 10);
+  hourIndex = hours - 1;
+  minuteIndex = minutes;
   updateScrollClass(hourCol, hourIndex);
   updateScrollClass(minuteCol, minuteIndex);
   updateTimeDisplay();
@@ -84,15 +81,16 @@ function closeCreateAlarmPage() {
 }
 
 function saveAlarm() {
-  alarms.push({
+    const selectedMeridiem = document.querySelector(".clock-active-meridiem")?.textContent || "AM";
+    alarms.push({
     id: `${Date.now()}`,
     active: true,
     time: {
       hour: createAlarmPageHour.textContent,
       minute: createAlarmPageMinute.textContent,
+      meridiem: selectedMeridiem,
     },
     timeHTML: `${createAlarmPageHour.textContent}:${createAlarmPageMinute.textContent}`,
-    meridiem: currMeridiem,
     repeat: [],
     ringtone: currRingtone,
     vibrate: vibrateBtn.dataset.state,
@@ -107,15 +105,23 @@ function createAlarmEl(alarmObj) {
   const alarmInfo = createElement("div");
   alarmInfo.classList.add("alarm-info");
 
+  const alarmTimeMeridiem = createElement("div");
+  alarmTimeMeridiem.classList.add("alarm-time-meridiem")
   const alarmTime = createElement("p");
   alarmTime.classList.add("alarm-time");
   alarmTime.textContent = alarmObj.timeHTML;
+
+  const alarmMeridiem = createElement("p");
+  alarmMeridiem.classList.add("alarm-meridiem");
+  alarmMeridiem.textContent = alarmObj.time.meridiem;
+
+  alarmTimeMeridiem.append(alarmTime, alarmMeridiem);
 
   const alarmDay = createElement("p");
   alarmDay.classList.add("alarm-day");
   alarmDay.textContent = "Tomorrow";
 
-  alarmInfo.append(alarmTime, alarmDay);
+  alarmInfo.append(alarmTimeMeridiem, alarmDay);
 
   const alarmToggle = createElement("div");
   alarmToggle.classList.add("alarm-toggle");
@@ -125,13 +131,13 @@ function createAlarmEl(alarmObj) {
   alarmToggle.dataset.id = `${alarmObj.id}`;
   alarmToggleBtn.classList.add("clock-toggle-button");
   alarmToggleBtn.dataset.state = alarmObj.active ? "on" : "off";
+  alarmToggleBtn.classList.add(alarmObj.active ? "clock-toggle-on" : "clock-toggle-off");
   alarmToggleBtn.addEventListener("click", () => {
     alarmObj.active = !alarmObj.active;
   });
   handleClockButtonClick(alarmToggleBtn);
 
   const alarmToggleBtnDiv = createElement("div");
-
   alarmToggleBtn.appendChild(alarmToggleBtnDiv);
   alarmToggle.appendChild(alarmToggleBtn);
   alarmContainer.append(alarmInfo, alarmToggle);
@@ -141,32 +147,39 @@ function createAlarmEl(alarmObj) {
 
 function activateAlarms() {
   setInterval(() => {
+    const now = new Date();
+    const currMeridiem = now.getHours() >= 12 ? 'PM' : 'AM';
+    let currHour = now.getHours() % 12 || 12;
+    let currMinute = now.getMinutes();
+
+    currHour = currHour.toString().padStart(2, "0");
+    currMinute = currMinute.toString().padStart(2, "0");
+
     alarms.forEach(alarm => {
       if (!alarm.active) return;
-
-      const now = new Date();
-      let currHour = now.getHours() % 12 || 12;
-      if (currHour < 10) currHour = "0" + currHour;
-      let currMinute = now.getMinutes();
-      if (currMinute < 10) currMinute = "0" + currMinute;
-
-      if (alarm.time.hour == currHour && alarm.time.minute == currMinute) {
+      if (
+        alarm.time.hour == currHour &&
+        alarm.time.minute == currMinute &&
+        alarm.time.meridiem === currMeridiem
+      ) {
         if (currPlayingAlarm) currPlayingAlarm.pause();
         currPlayingAlarm = new Audio("audios/afternoon_of_konoha.mp3");
         currPlayingAlarm.loop = false;
-        console.log(alarm.active)
         currPlayingAlarm.play();
 
-        if (alarm.time.vibrate === "on") navigator.vibrate([500, 200, 500]);
+        if (alarm.vibrate === "on") navigator.vibrate([500, 200, 500]);
 
         alarm.active = false;
-        getElById(`alarm-toggle-${alarm.id}`).dataset.state = "off";
+        const toggleBtn = getElById(`alarm-toggle-${alarm.id}`);
+        toggleBtn.dataset.state = "off";
+        toggleBtn.classList.remove("clock-toggle-on");
+        toggleBtn.classList.add("clock-toggle-off");
       }
     });
   }, 1000);
 }
 
-// --- TIME PICKER FUNCTIONS ---
+// --- TIME PICKER ---
 function populateTimeColumns() {
   for (let i = 1; i <= 12; i++) {
     const span = document.createElement("span");
@@ -192,66 +205,16 @@ function updateScrollClass(col, index) {
   const spans = col.querySelectorAll("span");
 
   spans.forEach((span, i) => {
-    if (i >= index - 2 && i <= index + 2) {
-      span.style.display = "inline-block";
-    } else {
-      span.style.display = "none";
-    }
+    span.style.display = i >= index - 2 && i <= index + 2 ? "inline-block" : "none";
     span.className = "";
-    span.style.transform = "scale(1)";
-    span.style.opacity = "0.4";
   });
 
+  const classMap = ["first", "second", "third", "fourth", "fifth"];
   for (let offset = -2; offset <= 2; offset++) {
     const pos = index + offset;
     if (pos < 0 || pos >= spans.length) continue;
-
-    let scale = 1;
-    let opacity = 1;
-    let cls = "";
-
-    switch (offset) {
-      case -2:
-        cls = "first";
-        scale = 1;
-        opacity = 0.6;
-        break;
-      case -1:
-        cls = "second";
-        scale = 1.2;
-        opacity = 0.8;
-        break;
-      case 0:
-        cls = "third";
-        scale = 1.5;
-        opacity = 1;
-        break;
-      case 1:
-        cls = "fourth";
-        scale = 1.2;
-        opacity = 0.8;
-        break;
-      case 2:
-        cls = "fifth";
-        scale = 1;
-        opacity = 0.6;
-        break;
-    }
-
-    spans[pos].className = cls;
-    spans[pos].style.transition = "transform 0.3s ease, opacity 0.3s ease";
-    spans[pos].style.transform = `scale(${scale})`;
-    spans[pos].style.opacity = opacity;
+    spans[pos].classList.add(classMap[offset + 2]);
   }
-
-  // const grandparent = col.parentElement.parentElement;
-  // const containerWidth = grandparent.offsetWidth;
-  // const targetLeft = spans[index].offsetLeft;
-  // const targetWidth = spans[index].offsetWidth;
-  // const scrollTo = targetLeft - containerWidth / 2 + targetWidth / 2;
-
-  // col.style.transition = "transform 13s ease";
-  // col.style.transform = `translateX(${-scrollTo}px)`;
 }
 
 function handleSwipe(col, isHour = true) {
@@ -266,42 +229,29 @@ function handleSwipe(col, isHour = true) {
   window.addEventListener("pointermove", e => {
     if (!isDragging) return;
     const diff = e.clientX - startX;
+    const spans = col.querySelectorAll("span");
 
     if (diff > 25) {
       if (isHour && hourIndex > 0) hourIndex--;
       if (!isHour && minuteIndex > 0) minuteIndex--;
       startX = e.clientX;
-      updateScrollClass(col, isHour ? hourIndex : minuteIndex);
-      updateTimeDisplay();
     } else if (diff < -25) {
-      const spans = col.querySelectorAll("span");
       if (isHour && hourIndex < spans.length - 1) hourIndex++;
       if (!isHour && minuteIndex < spans.length - 1) minuteIndex++;
       startX = e.clientX;
-      updateScrollClass(col, isHour ? hourIndex : minuteIndex);
-      updateTimeDisplay();
     }
+
+    updateScrollClass(col, isHour ? hourIndex : minuteIndex);
+    updateTimeDisplay();
   });
 
-  window.addEventListener("pointerup", () => {
-    isDragging = false;
-  });
+  window.addEventListener("pointerup", () => isDragging = false);
 }
 
-// --- AM/PM (Meridiem) Swipe Functions ---
+// --- Meridiem Swiper ---
 function updateMeridiemDisplay() {
   meridiemSpans.forEach((span, i) => {
-    if (i === meridiemIndex) {
-      span.style.opacity = "1";
-      span.style.fontWeight = "700";
-      span.style.transform = "scale(1.5)";
-      span.style.transition = "transform 0.3s ease, opacity 0.3s ease";
-    } else {
-      span.style.opacity = "0.4";
-      span.style.fontWeight = "400";
-      span.style.transform = "scale(1)";
-      span.style.transition = "transform 0.3s ease, opacity 0.3s ease";
-    }
+    span.classList.toggle("clock-active-meridiem", i === meridiemIndex);
   });
 }
 
@@ -317,19 +267,17 @@ function handleMeridiemSwipe() {
   window.addEventListener("pointermove", e => {
     if (!isDragging) return;
     const diff = e.clientY - startY;
-    if (diff > 25 || diff < -25) {
-      meridiemIndex = meridiemIndex === 0 ? 1 : 0; // toggle
-      startY = e.clientY;
+    if (Math.abs(diff) > 25) {
+      meridiemIndex = meridiemIndex === 0 ? 1 : 0;
       updateMeridiemDisplay();
+      startY = e.clientY;
     }
   });
 
-  window.addEventListener("pointerup", () => {
-    isDragging = false;
-  });
+  window.addEventListener("pointerup", () => isDragging = false);
 }
 
-// --- EVENT LISTENERS ---
+// --- INIT ---
 createAlarmBtn.addEventListener("click", openCreateAlarmPage);
 closeCreateAlarmPageBtn.addEventListener("click", closeCreateAlarmPage);
 cancelCreateAlarmPageBtn.addEventListener("click", closeCreateAlarmPage);
@@ -342,16 +290,13 @@ saveCreateAlarmPageBtn.addEventListener("click", () => {
 
 handleClockButtonClick(vibrateBtn);
 
-// --- INITIALIZATION ---
 rotateForCurrentTime();
 activateAlarms();
-
 populateTimeColumns();
 handleSwipe(hourCol, true);
 handleSwipe(minuteCol, false);
 updateScrollClass(hourCol, hourIndex);
 updateScrollClass(minuteCol, minuteIndex);
 updateTimeDisplay();
-
 updateMeridiemDisplay();
 handleMeridiemSwipe();

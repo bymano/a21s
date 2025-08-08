@@ -135,12 +135,14 @@
   font-weight: 200;
   letter-spacing: 1px;
 }
-#secondary-clock-screen .alarm-list-container .alarm-container .alarm-info .alarm-time .alarm-meridiem {
-  font-size: .8rem;
-  margin-left: .2rem;
-  color: rgba(255, 255, 255, .75);
+#secondary-clock-screen .alarm-list-container .alarm-container .alarm-info .alarm-meridiem {
+  font-size: 1rem;
+  margin-left: .3rem;
+  margin-bottom: .625rem;
+  color: rgba(255, 255, 255, .9);
 }
 #secondary-clock-screen .alarm-list-container .alarm-container .alarm-info .alarm-day {
+  margin-top: -.25rem;
   font-size: .9rem;
   color: rgba(255, 255, 255 , .6);
 }
@@ -360,4 +362,58 @@
 }
 .create-alarm-page .alarm-time-selection div .third {
   font-size: 2.75rem;
+}
+
+.alarm-time-meridiem {
+  display: flex;
+  align-items: end;
+}
+
+.first {
+  opacity: 0.6;
+  transform: scale(1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.second {
+  opacity: 0.8;
+  transform: scale(1.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.third {
+  opacity: 1;
+  transform: scale(1.5);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.fourth {
+  opacity: 0.8;
+  transform: scale(1.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.fifth {
+  opacity: 0.6;
+  transform: scale(1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.create-alarm-meridiem span {
+  opacity: 0.4;
+  font-weight: 400;
+  transform: scale(1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.create-alarm-meridiem span.clock-active-meridiem {
+  opacity: 1 !important;
+  font-weight: 700 !important;
+  transform: scale(1.5) !important;
+}
+
+.clock-active-meridiem {
+  font-weight: 700;
+  opacity: 1;
+  transform: scale(1.5);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
