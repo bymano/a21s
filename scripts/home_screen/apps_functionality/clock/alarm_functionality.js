@@ -197,7 +197,7 @@ function alarmActionDropdown(alarm) {
   alarmLabel.innerHTML = "<i class='bx bx-alarm'></i> Clock";
 // 
 
-  const alarmDropdownInformation = createElement("div");
+  const alarmDropdownInformation = createElement("div"); 
   alarmDropdownInformation.classList.add("alarm-dropdown-information");
 
   const alarmInformationLabel = createElement("label");
@@ -215,7 +215,7 @@ function alarmActionDropdown(alarm) {
   snoozeButton.classList.add("alarm-snooze-button")
   snoozeButton.dataset.parentId = alarm.id;
   snoozeButton.textContent = "SNOOZE";
-  const snoozeTimeoutMS = 5000;
+  const snoozeTimeoutMS = 10 * 60 * 1000;
   snoozeButton.addEventListener("click", () => {
   const clonedAlarm = {
     ...alarm, // clone current alarm context
