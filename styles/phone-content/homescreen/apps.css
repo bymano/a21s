@@ -43,7 +43,6 @@ main #home-screen .app-grid .app p {
   bottom: -42.5%;
   font-size: .8rem;
   color: white;
-  z-index: 250;
   vertical-align: bottom;
   padding: 0;
   margin: 0;

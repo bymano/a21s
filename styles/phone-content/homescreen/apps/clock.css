@@ -417,3 +417,57 @@
   transform: scale(1.5);
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+.alarm-dropdown-container {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  right: 0;
+  background-color: black;
+  padding: 3rem 2rem 1.25rem 2rem;
+  transition: .5s;
+  color: white;
+}
+.notif-dropdown {
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+}
+.alarm-dropdown-container-label {
+  display: flex;
+  align-items: center;
+  color: rgb(205, 205, 205);
+  margin-bottom: .75rem;
+}
+.alarm-dropdown-container-label i {
+  font-size: 1.5rem;
+  color: white;
+  margin-right: .5rem;
+}
+
+.alarm-dropdown-information {
+  margin-bottom: 1rem;
+}
+.alarm-dropdown-information span {
+  color: rgb(205, 205, 205);
+}
+
+.alarm-dropdown-action {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.alarm-dropdown-action button {
+  width: 100%;
+  padding: .5rem;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  transition: .5s;
+}
+.alarm-dropdown-action button:hover {
+  background-color: white;
+  color: black;
+}
+.alarm-dropdown-action button:first-child {
+  margin-right: 1rem;
+}
